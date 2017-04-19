@@ -1,13 +1,15 @@
 import React from 'react';
-import HomePage from './HomePage/HomePage';
-import DomainPage from './DomainPage/DomainPage';
-import ArticlePage from './ArticlePage/ArticlePage';
+import NavBar from './NavBar/NavBar'; 
 
 class App extends React.Component {
   render () {
     return (
       <div>
-        <ArticlePage/>
+        <h1>This is App</h1>
+        <NavBar />
+        <div className="section">
+          {this.props.children} 
+        </div>
       </div>
     );
   }
