@@ -1,4 +1,4 @@
-const { expect } = require('chai');
+import {expect} from 'chai';
 
 describe('Example test', function () {
   it('Will not allow commit if test is failing', function () {
