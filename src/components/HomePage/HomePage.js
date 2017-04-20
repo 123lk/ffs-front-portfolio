@@ -6,9 +6,12 @@ class HomePage extends React.Component {
   render () {
     return (
       <div>
-        <h1>This is a HomePage</h1>
-        <HomeTextArea/>
-        <HomeNewsStoryFeed/>
+        <div className="row home-text-area">
+          <HomeTextArea/>
+        </div>
+        <div className="row home-news-story-feed">
+          <HomeNewsStoryFeed/>
+        </div>
       </div>
     );
   }

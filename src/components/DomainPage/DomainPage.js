@@ -7,10 +7,15 @@ class DomainPage extends React.Component {
   render () {
     return (
       <div>
-        <h1>This is a DomainPage</h1>
-        <DomainTextArea/>
-        <DomainApprovedFeed/>
-        <DomainPendingFeed/>
+        <div className="row domain-text-area">
+          <DomainTextArea/>
+        </div>
+        <div className="row domain-approved-feed">
+          <DomainApprovedFeed/>
+        </div>
+        <div className="row domain-pending-feed">
+          <DomainPendingFeed/>
+        </div>
       </div>
     );
   }

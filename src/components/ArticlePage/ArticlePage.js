@@ -6,9 +6,12 @@ class ArticlePage extends React.Component {
   render () {
     return (
       <div>
-        <h1>This is a ArticlePage</h1>
-        <ArticleTextArea/>
-        <ArticleCommentList/>
+        <div className="row article-text-area">
+          <ArticleTextArea/>
+        </div>
+        <div className="row article-comment-list">
+          <ArticleCommentList/>
+        </div>
       </div>
     );
   }

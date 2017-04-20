@@ -6,9 +6,12 @@ class NavBar extends React.Component {
   render () {
     return (
       <div>
-        <h1>This is a NavBar</h1>
-        <UserNav/>
-        <TrendsBox/>
+        <div className="row user-nav">
+          <UserNav/>
+        </div>
+        <div className="row trends-box">
+          <TrendsBox/>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,76 @@
+.nav-column {
+  border: solid black 0.2em;
+  height: 100vh;
+  text-align: center;
+}
+
+.main-column {
+  border: solid black 0.2em;
+  height: 100vh;
+  text-align: center;
+}
+
+.user-nav{
+  height: 49.8vh;
+  border: solid mediumaquamarine 0.2em;
+}
+
+.trends-box{
+  height: 49.8vh;
+  border: solid rebeccapurple 0.2em;
+}
+
+.home-text-area {
+  height: 35vh;
+  border: solid mediumslateblue 0.2em;
+  margin-bottom: 1.5em;
+}
+
+.home-news-story-feed {
+  height: 50vh;
+  width: 60%;
+  border: solid orangered 0.2em;
+  margin: auto;
+}
+
+.article-text-area {
+  height: 35vh;
+  border: solid mediumslateblue 0.2em;
+  margin-bottom: 1.5em;
+}
+
+.article-comment-list {
+  height: 50vh;
+  width: 85%;
+  border: solid orangered 0.2em;
+  margin: auto;
+}
+
+.domain-text-area {
+  height: 35vh;
+  border: solid mediumslateblue 0.2em;
+  margin-bottom: 1.5em;
+}
+
+.domain-approved-feed {
+  height: 25vh;
+  width: 60%;
+  border: solid orangered 0.2em;
+  margin: auto;
+  margin-bottom: 4em;
+}
+
+.domain-pending-feed {
+  height: 25vh;
+  width: 60%;
+  border: solid orangered 0.2em;
+  margin: auto;
+}
+
+.report-form {
+  border: solid greenyellow 0.2em;
+  margin: auto;
+  margin-top: 20vh;
+  height: 50%;
+  width: 50%;
+}
