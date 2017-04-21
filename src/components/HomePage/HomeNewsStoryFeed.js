@@ -1,5 +1,6 @@
 import React from 'react';
-import HomeNewsStoryFeedCard from './HomeNewsStoryFeedCard'; 
+import HomeNewsStoryFeedCard from './HomeNewsStoryFeedCard';
+import {connect} from 'react-redux';
 
 class HomeNewsStoryFeed extends React.Component {
   render () {
@@ -12,4 +13,10 @@ class HomeNewsStoryFeed extends React.Component {
   }
 }
 
-export default HomeNewsStoryFeed;
+function mapStateToProps(state) {
+  return {
+    articles: state.articles
+  };
+}
+
+export default connect(mapStateToProps)(HomeNewsStoryFeed);

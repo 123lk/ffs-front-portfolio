@@ -1,5 +1,5 @@
-import * as types from '../actions/types';
 import {normalizeArrayById} from '../helpers';
+import * as types from '../actions/types';
 
 export const initialState = {
   loading: false,
@@ -22,19 +22,19 @@ export default function (prevState = initialState, action) {
     case types.FETCH_HOME_SUCCESS:
       return Object.assign({}, prevState, {
         loading: false,
-        byId: normalizeArrayById(action.data.stories)
+        byId: normalizeArrayById(action.articles)
       });
     default:
       return prevState;
   }
 }
 
-export function getTopStories (stories, num) {
+export function getTopArticles (articles, num) {
   // TODO: sort this out
-  // selector that takes in the whole state.stories and a number
-  // returns an array of the top stories ordered chronologically
-  return Object.keys(stories.byId)
-    .map((id) => stories.byId[id])
+  // selector that takes in the whole state.articles and a number
+  // returns an array of the top articles ordered chronologically
+  return Object.keys(articles.byId)
+    .map((id) => articles.byId[id])
     .sort((a, b) => {
       return a.date - b.date;
     })

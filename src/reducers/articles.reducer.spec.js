@@ -1,22 +1,22 @@
 import {expect} from 'chai';
 import deepFreeze from 'deep-freeze';
 import * as types from '../actions/types';
-import storiesReducer, {initialState} from './stories.reducer';
+import articlesReducer, {initialState} from './articles.reducer';
 
-describe('reducers:stories', () => {
+describe('reducers:articles', () => {
   it('is a function', () => {
-    expect(storiesReducer).to.be.a('function');
+    expect(articlesReducer).to.be.a('function');
   });
   it('returns the prevState for unhandled actions', () => {
     const initialState = {
       whatever: 10291094810
     };
     const action = {type: 'whatever'};
-    expect(storiesReducer(initialState, action)).to.equal(initialState);
+    expect(articlesReducer(initialState, action)).to.equal(initialState);
   });
   it('returns the initialState if no prevState is passed', () => {
     const action = {type: 'whatever'};
-    expect(storiesReducer(undefined, action)).to.equal(initialState);
+    expect(articlesReducer(undefined, action)).to.equal(initialState);
   })
   describe('action:FETCH_HOME', () => {
     it('handles REQUEST', () => {
@@ -29,7 +29,7 @@ describe('reducers:stories', () => {
         loading: true,
         error: null
       };
-      expect(storiesReducer(initialState, action)).to.eql(expectedState);
+      expect(articlesReducer(initialState, action)).to.eql(expectedState);
     });
     it('handles ERROR', () => {
       const initialState = deepFreeze({
@@ -41,20 +41,20 @@ describe('reducers:stories', () => {
         loading: false,
         error: 'hello'
       };
-      expect(storiesReducer(initialState, action)).to.eql(expectedState);
+      expect(articlesReducer(initialState, action)).to.eql(expectedState);
     });
     it('handles SUCCESS', () => {
       const initialState = deepFreeze({
         loading: true,
         byId: {}
       });
-      const action = {type: types.FETCH_HOME_SUCCESS, data: {
-        stories: [
+      const action = {type: types.FETCH_HOME_SUCCESS, 
+        articles: [
           {_id: 1, title: 'Article 1'},
           {_id: 2, title: 'Article 2'},
-          {_id: 3, title: 'Article 3'},
+          {_id: 3, title: 'Article 3'}
         ]
-      }};
+      };
       const expectedState = {
         loading: false,
         byId: {
@@ -63,7 +63,7 @@ describe('reducers:stories', () => {
           '3': {_id: 3, title: 'Article 3'}
         }
       };
-      expect(storiesReducer(initialState, action)).to.eql(expectedState);
+      expect(articlesReducer(initialState, action)).to.eql(expectedState);
     });
   });
 });
