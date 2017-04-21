@@ -10,7 +10,8 @@ export function fetchHome () {
       .then(function (response) {
         dispatch({
           type: types.FETCH_HOME_SUCCESS,
-          articles: response.data
+          articles: response.data,
+          trends: response.trends
         });
       })
       .catch(function (error) {

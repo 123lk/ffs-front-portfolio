@@ -1,13 +1,17 @@
 import React from 'react';
 import HomeNewsStoryFeedCard from './HomeNewsStoryFeedCard';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import _ from 'underscore';
+
 
 class HomeNewsStoryFeed extends React.Component {
-  render () {
+  render() {
     return (
       <div>
-      <h1>This is a HomeNewsStoryFeed</h1>
-      <HomeNewsStoryFeedCard />
+        <h3>home news story feed</h3>
+        {_.map(this.props.articles, (article, i) => {
+          return <HomeNewsStoryFeedCard key={i} title={article.title} domain={article.domain}/>
+        }).slice(0, 10)}
       </div>
     );
   }
@@ -15,7 +19,7 @@ class HomeNewsStoryFeed extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    articles: state.articles
+    articles: state.articlesReducer.byId
   };
 }
 

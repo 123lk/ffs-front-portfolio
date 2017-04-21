@@ -46,13 +46,19 @@ describe('reducers:articles', () => {
     it('handles SUCCESS', () => {
       const initialState = deepFreeze({
         loading: true,
-        byId: {}
+        byId: {},
+        trendsById: {}
       });
       const action = {type: types.FETCH_HOME_SUCCESS, 
         articles: [
           {_id: 1, title: 'Article 1'},
           {_id: 2, title: 'Article 2'},
           {_id: 3, title: 'Article 3'}
+        ],
+        trends: [
+          {_id: 1, trend: 'Trump', popularity: 77},
+          {_id: 2, trend: 'Joe', popularity: 10},
+          {_id: 3, trend: 'Laura', popularity: 34}
         ]
       };
       const expectedState = {
@@ -61,6 +67,11 @@ describe('reducers:articles', () => {
           '1': {_id: 1, title: 'Article 1'},
           '2': {_id: 2, title: 'Article 2'},
           '3': {_id: 3, title: 'Article 3'}
+        },
+        trendsById: {
+          '1': {_id: 1, trend: 'Trump', popularity: 77},
+          '2': {_id: 2, trend: 'Joe', popularity: 10},
+          '3': {_id: 3, trend: 'Laura', popularity: 34}
         }
       };
       expect(articlesReducer(initialState, action)).to.eql(expectedState);
