@@ -1,15 +1,25 @@
 import React from 'react';
 import ArticleComment from './ArticleComment';
+import { connect } from 'react-redux';
+import _ from 'underscore';
 
 class ArticleCommentList extends React.Component {
   render () {
     return (
       <div>
-        <h1>This is a ArticleCommentList</h1>
-        <ArticleComment/>
+        <h3>comment list</h3>
+        {_.map(this.props.comments, (comment, i) => {
+          return <ArticleComment key={i} author={comment.author} comment={comment.comment} votes={comment.votes}/>;
+        })}
       </div>
     );
   }
 }
 
-export default ArticleCommentList;
+function mapStateToProps(state) {
+  return {
+    comments: state.articlesReducer.commentsById
+  };
+}
+
+export default connect(mapStateToProps)(ArticleCommentList);

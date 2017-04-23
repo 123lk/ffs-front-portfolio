@@ -1,11 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class DomainTextArea extends React.Component {
-  render () {
+  render() {
     return (
-      <h1>This is a DomainTextArea</h1>
+      <div>
+        <h1>{this.props.domain.domainName}</h1>
+        <p>{this.props.domain.domainDescription}</p>
+      </div>
     );
   }
 }
 
-export default DomainTextArea;
+function mapStateToProps(state) {
+  return {
+    domain: state.articlesReducer.domain
+  };
+}
+
+export default connect(mapStateToProps)(DomainTextArea);

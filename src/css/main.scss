@@ -37,7 +37,6 @@
 }
 
 .article-comment-list {
-  height: 50vh;
   width: 85%;
   border: solid orangered 0.2em;
   margin: auto;
@@ -50,7 +49,6 @@
 }
 
 .domain-approved-feed {
-  height: 25vh;
   width: 60%;
   border: solid orangered 0.2em;
   margin: auto;
@@ -58,7 +56,6 @@
 }
 
 .domain-pending-feed {
-  height: 25vh;
   width: 60%;
   border: solid orangered 0.2em;
   margin: auto;
@@ -75,5 +72,17 @@
 .home-news-story-feed-card {
   height: 10vh;
   border: solid maroon 0.2em;
+  margin-bottom: 1.5em;
+}
+
+.domain-approved-feed-card {
+  height: 10vh;
+  border: solid hotpink 0.2em;
+  margin-bottom: 1.5em;
+}
+
+.comment-card {
+  height: 10vh;
+  border: solid red 0.2em;
   margin-bottom: 1.5em;
 }
