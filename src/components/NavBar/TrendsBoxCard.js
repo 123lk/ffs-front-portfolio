@@ -4,8 +4,8 @@ class TrendsBoxCard extends React.Component {
   render () {
     return (
       <div className="container-fluid trends-box-card">
-        <p>
-      {this.props.trend}
+        <p><b>{this.props.trend}</b>
+      
         </p>
       </div>
     );

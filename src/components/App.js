@@ -11,7 +11,7 @@ class App extends React.Component {
           <div className="col-md-3 nav-column">
             <NavBar />
           </div>
-          <div className="col-md-9 main-column">
+          <div className="col-md-8 main-column">
             {this.props.children} 
           </div>
         </div>
