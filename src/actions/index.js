@@ -23,6 +23,27 @@ export function fetchHome() {
   };
 }
 
+export function fetchDomain() {
+  return function (dispatch) {
+    dispatch({ type: types.FETCH_DOMAIN_REQUEST });
+    return axios.get(`${API_ROOT}/domain`)
+      .then(function (response) {
+        dispatch({
+          type: types.FETCH_DOMAIN_SUCCESS,
+          domain: response.domain,
+          articles: response.data,
+          trends: response.trends
+        });
+      })
+      .catch(function (error) {
+        dispatch({
+          type: types.FETCH_DOMAIN_ERROR,
+          error
+        });
+      });
+  };
+}
+
 export function fetchArticle() {
   return function (dispatch) {
     dispatch({ type: types.FETCH_ARTICLE_REQUEST });
