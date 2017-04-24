@@ -62,6 +62,21 @@ export default function (prevState = initialState, action) {
         commentsById: normalizeArrayById(action.comments),
         trendsById: normalizeArrayById(action.trends)
       });
+    case types.FETCH_TRENDS_REQUEST:
+      return Object.assign({}, prevState, {
+        loading: true,
+        error: null
+      });
+    case types.FETCH_TRENDS_ERROR:
+      return Object.assign({}, prevState, {
+        loading: false,
+        error: action.error
+      });
+    case types.FETCH_TRENDS_SUCCESS:
+      return Object.assign({}, prevState, {
+        loading: false,
+        trendsById: normalizeArrayById(action.trends)
+      });
     default:
       return prevState;
   }

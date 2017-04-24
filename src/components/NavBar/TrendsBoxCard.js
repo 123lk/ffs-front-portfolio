@@ -3,7 +3,11 @@ import React from 'react';
 class TrendsBoxCard extends React.Component {
   render () {
     return (
-      <h6>This is a TrendsBoxCard</h6>
+      <div className="container-fluid trends-box-card">
+        <p>
+      {this.props.trend}
+        </p>
+      </div>
     );
   }
 }

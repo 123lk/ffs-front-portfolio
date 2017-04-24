@@ -11,6 +11,21 @@
 .user-nav{
   height: 49.8vh;
   border: solid mediumaquamarine 0.2em;
+  img {
+    width: 10em;
+    height: 8em; 
+    margin: 1em;
+  }
+  ul {
+    list-style-type: none; 
+    text-align: left; 
+    padding: 0;
+  }
+  .user-nav-box {
+    border: solid yellowgreen 0.2em;
+    width: 50%;
+    margin: auto;
+  }
 }
 
 .trends-box{
@@ -86,3 +101,4 @@
   border: solid red 0.2em;
   margin-bottom: 1.5em;
 }
+

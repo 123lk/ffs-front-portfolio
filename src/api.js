@@ -60,7 +60,19 @@ export function get(path) {
           { _id: 1, author: 'some person', comment: 'this is a comment', threadId: null, articleId: 1, votes: 12 },
           { _id: 2, author: 'some person2', comment: 'this is a comment2', threadId: null, articleId: 1, votes: 23 },
           { _id: 3, author: 'some person3', comment: 'this is a comment3', threadId: null, articleId: 1, votes: 2 }
-          ],
+        ],
+        trends: [
+          { _id: 1, trend: 'Trump', popularity: 77 },
+          { _id: 2, trend: 'Joe', popularity: 10 },
+          { _id: 3, trend: 'Laura', popularity: 34 },
+          { _id: 4, trend: 'Tigers', popularity: 86 },
+          { _id: 5, trend: 'Corruption', popularity: 12 },
+          { _id: 6, trend: 'Unicorns', popularity: 19 },
+          { _id: 7, trend: 'Smallpox', popularity: 9 }
+        ]
+      });
+    case '/reportform':
+      return Promise.resolve({
         trends: [
           { _id: 1, trend: 'Trump', popularity: 77 },
           { _id: 2, trend: 'Joe', popularity: 10 },

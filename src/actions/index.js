@@ -64,3 +64,22 @@ export function fetchArticle() {
       });
   };
 }
+
+export function fetchTrends() {
+  return function (dispatch) {
+    dispatch({ type: types.FETCH_TRENDS_REQUEST });
+    return axios.get(`${API_ROOT}/reportform`)
+      .then(function (response) {
+        dispatch({
+          type: types.FETCH_TRENDS_SUCCESS,
+          trends: response.trends
+        });
+      })
+      .catch(function (error) {
+        dispatch({
+          type: types.FETCH_TRENDS_ERROR,
+          error
+        });
+      });
+  };
+}

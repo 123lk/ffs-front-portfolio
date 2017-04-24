@@ -8,7 +8,7 @@ class TrendsBox extends React.Component {
   render () {
     return (
       <div>
-      <h2>This is a TrendsBox</h2>
+      <h2>Themes</h2>
         {_.map(this.props.trends, (trend, i) => {
           return <TrendsBoxCard key={i} trend={trend.trend}/>;
         }).slice(0, 10)}
