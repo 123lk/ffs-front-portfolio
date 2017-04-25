@@ -72,17 +72,13 @@ body {
 }
 
 .home-text-area {
-  padding: 5em;
-  height: 35vh;
+  padding: 3em;
   margin: 6em;
   margin-top: 2em;
   background-color: white;
   border: solid darkslategray 1px;
   border-radius: 0.5em;
   margin-bottom: 1.5em;
-  h1 {
-    padding: 0.5em;
-  }
 }
 
 .home-news-story-feed {
@@ -92,7 +88,6 @@ body {
   border-radius: 0.5em;
   margin: auto;
   .home-news-story-feed-card {
-  height: 8vh;
   width: 70%;
   border: solid maroon 0.2em;
   border-radius: 0.5em;
