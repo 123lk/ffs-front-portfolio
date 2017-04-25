@@ -1,20 +1,22 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 class ArticleTextArea extends React.Component {
- 
-  render () {
-     let x = this.props.article;
-     console.log(x)
+
+  render() {
     return (
-    <h1>{console.log(this.props.article)}</h1>
-    )
+      <div>
+        <h1>{this.props.articleById && this.props.articleById[1] && this.props.articleById[1].title}</h1>
+        <h3>{this.props.articleById && this.props.articleById[1] && this.props.articleById[1].domain}</h3>
+        <p>{this.props.articleById && this.props.articleById[1] && this.props.articleById[1].description}</p>
+      </div>
+    ); 
   }
 }
 
 function mapStateToProps(state) {
   return {
-    article: state.articlesReducer.byId
+    articleById: state.articlesReducer.byId
   };
 }
 
