@@ -1,6 +1,7 @@
 import React from 'react';
 import ArticleCommentList from './ArticleCommentList';
 import ArticleTextArea from './ArticleTextArea';
+import ArticleCommentForm from './ArticleCommentForm'; 
 import * as actions from '../../actions/index.js';
 import { connect } from 'react-redux';
 
@@ -17,6 +18,7 @@ class ArticlePage extends React.Component {
         <div className="row article-comment-list">
           <ArticleCommentList />
         </div>
+        <ArticleCommentForm />
       </div>
     );
   }
