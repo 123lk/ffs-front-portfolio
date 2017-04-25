@@ -11,6 +11,8 @@ class ArticleCommentList extends React.Component {
         {_.map(this.props.comments, (comment, i) => {
           return <ArticleComment key={i} author={comment.author} comment={comment.comment} votes={comment.votes}/>;
         })}
+        <button type="button" className="btn btn-primary paginate"><span className="glyphicon glyphicon-menu-left" aria-hidden="true"></span>  Previous</button>
+        <button type="button" className="btn btn-primary paginate"><span className="glyphicon glyphicon-menu-right" aria-hidden="true"></span>  Next</button>
       </div>
     );
   }
