@@ -7,8 +7,8 @@ import _ from 'underscore';
 class TrendsBox extends React.Component {
   render () {
     return (
-      <div>
-      <h2>Themes</h2>
+      <div className="trends-box-inner">
+      <h2><b>FFS Trending</b></h2>
         {_.map(this.props.trends, (trend, i) => {
           return <TrendsBoxCard key={i} trend={trend.trend}/>;
         }).slice(0, 10)}
