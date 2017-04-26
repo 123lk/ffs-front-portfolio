@@ -35,21 +35,30 @@ export function get(path) {
           { _id: 12, title: 'Article 12', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true }
         ]
       });
-    case '/article':
+    case '/articles/1':
       return Promise.resolve({
-        data: [{ _id: 1, title: 'Article 1', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true }],
-        comments: [
-          { _id: 1, author: 'some person', comment: 'this is a comment', threadId: null, articleId: 1, votes: 12 },
-          { _id: 2, author: 'some person2', comment: 'this is a comment2', threadId: null, articleId: 1, votes: 23 },
-          { _id: 3, author: 'some person3', comment: 'this is a comment3', threadId: 2, articleId: 1, votes: 2 },
-          { _id: 4, author: 'some person4', comment: 'this is a comment4', threadId: 3, articleId: 1, votes: 12 },
-          { _id: 5, author: 'some person5', comment: 'this is a comment5', threadId: null, articleId: 1, votes: 43 },
-          { _id: 6, author: 'some person6', comment: 'this is a comment6', threadId: null, articleId: 1, votes: 2 },
-          { _id: 7, author: 'some person7', comment: 'this is a comment7', threadId: 6, articleId: 1, votes: 0 },
-          { _id: 8, author: 'some person8', comment: 'this is a comment8', threadId: null, articleId: 1, votes: 59 },
-          { _id: 9, author: 'some person9', comment: 'this is a comment9', threadId: null, articleId: 1, votes: 2 },
-          { _id: 10, author: 'some person10', comment: 'this is a comment10', threadId: 9, articleId: 1, votes: 90 }
-        ]
+        data: {
+          articleData: {
+            _id: 1, 
+            title: 'Article 1', 
+            // TODO: refactor domain to domainId
+            domain: 'www.random1.com', 
+            description: 'this is some text about the article', 
+            articleIsFakeNews: true
+          },
+          comments: [
+            { _id: 1, author: 'some person', comment: 'this is a comment', threadId: null, articleId: 1, votes: 12 },
+            { _id: 2, author: 'some person2', comment: 'this is a comment2', threadId: null, articleId: 1, votes: 23 },
+            { _id: 3, author: 'some person3', comment: 'this is a comment3', threadId: 2, articleId: 1, votes: 2 },
+            { _id: 4, author: 'some person4', comment: 'this is a comment4', threadId: 3, articleId: 1, votes: 12 },
+            { _id: 5, author: 'some person5', comment: 'this is a comment5', threadId: null, articleId: 1, votes: 43 },
+            { _id: 6, author: 'some person6', comment: 'this is a comment6', threadId: null, articleId: 1, votes: 2 },
+            { _id: 7, author: 'some person7', comment: 'this is a comment7', threadId: 6, articleId: 1, votes: 0 },
+            { _id: 8, author: 'some person8', comment: 'this is a comment8', threadId: null, articleId: 1, votes: 59 },
+            { _id: 9, author: 'some person9', comment: 'this is a comment9', threadId: null, articleId: 1, votes: 2 },
+            { _id: 10, author: 'some person10', comment: 'this is a comment10', threadId: 9, articleId: 1, votes: 90 }
+          ]
+        }
       });
     case '/trends':
       return Promise.resolve({

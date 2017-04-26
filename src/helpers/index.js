@@ -7,13 +7,6 @@ export function normalizeArrayById(arr) {
   }, {});
 }
 
-export function sortCommentsByVotes(commentsById) {
-  const comments = Object.values(commentsById);
-  return comments.sort(function (a, b) {
-    return b.votes - a.votes;
-  });
-}
-
 // map through all comments
 // add property children: []
 // loop through all comments

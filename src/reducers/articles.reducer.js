@@ -5,8 +5,7 @@ export const initialState = {
   loading: false,
   error: null,
   byId: {}, 
-  domain: {},
-  commentsById: {}
+  domain: {}
 };
 
 export default function (prevState = initialState, action) {
@@ -41,22 +40,6 @@ export default function (prevState = initialState, action) {
         loading: false,
         domain: action.domain, 
         byId: normalizeArrayById(action.articles)
-      });
-    case types.FETCH_ARTICLE_REQUEST:
-      return Object.assign({}, prevState, {
-        loading: true,
-        error: null
-      });
-    case types.FETCH_ARTICLE_ERROR:
-      return Object.assign({}, prevState, {
-        loading: false,
-        error: action.error
-      });
-    case types.FETCH_ARTICLE_SUCCESS:
-      return Object.assign({}, prevState, {
-        loading: false, 
-        byId: normalizeArrayById(action.articles),
-        commentsById: normalizeArrayById(action.comments)
       });
     default:
       return prevState;

@@ -44,27 +44,27 @@ export function fetchDomain() {
   };
 }
 
-export function fetchArticle() {
+// NOTE: fake API only works for /articles/1
+export function fetchCurrentArticle(id) {
   return function (dispatch) {
-    dispatch({ type: types.FETCH_ARTICLE_REQUEST });
-    return axios.get(`${API_ROOT}/article`)
+    dispatch({ type: types.FETCH_CURRENT_ARTICLE_REQUEST });
+    return axios.get(`${API_ROOT}/articles/${id}`)
       .then(function (response) {
         dispatch({
-          type: types.FETCH_ARTICLE_SUCCESS,
-          articles: response.data,
-          comments: response.comments, 
-          trends: response.trends
+          type: types.FETCH_CURRENT_ARTICLE_SUCCESS,
+          data: response.data
         });
       })
       .catch(function (error) {
         dispatch({
-          type: types.FETCH_ARTICLE_ERROR,
+          type: types.FETCH_CURRENT_ARTICLE_ERROR,
           error
         });
       });
   };
 }
 
+// TODO: refactor fetchProperTrends -> fetchTrends
 export function fetchTrends() {
   return function (dispatch) {
     dispatch({ type: types.FETCH_TRENDS_REQUEST });
