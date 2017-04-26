@@ -1,22 +1,22 @@
 import { expect } from 'chai';
 import deepFreeze from 'deep-freeze';
 import * as types from '../actions/types';
-import articlesReducer, { initialState } from './articles.reducer';
+import articles, { initialState } from './articles.reducer';
 
 describe('reducers:articles', () => {
   it('is a function', () => {
-    expect(articlesReducer).to.be.a('function');
+    expect(articles).to.be.a('function');
   });
   it('returns the prevState for unhandled actions', () => {
     const initialState = {
       whatever: 10291094810
     };
     const action = { type: 'whatever' };
-    expect(articlesReducer(initialState, action)).to.equal(initialState);
+    expect(articles(initialState, action)).to.equal(initialState);
   });
   it('returns the initialState if no prevState is passed', () => {
     const action = { type: 'whatever' };
-    expect(articlesReducer(undefined, action)).to.equal(initialState);
+    expect(articles(undefined, action)).to.equal(initialState);
   });
   describe('action:FETCH_HOME', () => {
     it('handles REQUEST', () => {
@@ -29,7 +29,7 @@ describe('reducers:articles', () => {
         loading: true,
         error: null
       };
-      expect(articlesReducer(initialState, action)).to.eql(expectedState);
+      expect(articles(initialState, action)).to.eql(expectedState);
     });
     it('handles ERROR', () => {
       const initialState = deepFreeze({
@@ -41,13 +41,12 @@ describe('reducers:articles', () => {
         loading: false,
         error: 'hello'
       };
-      expect(articlesReducer(initialState, action)).to.eql(expectedState);
+      expect(articles(initialState, action)).to.eql(expectedState);
     });
     it('handles SUCCESS', () => {
       const initialState = deepFreeze({
         loading: true,
-        byId: {},
-        trendsById: {}
+        byId: {}
       });
       const action = {
         type: types.FETCH_HOME_SUCCESS,
@@ -55,11 +54,6 @@ describe('reducers:articles', () => {
           { _id: 1, title: 'Article 1' },
           { _id: 2, title: 'Article 2' },
           { _id: 3, title: 'Article 3' }
-        ],
-        trends: [
-          { _id: 1, trend: 'Trump', popularity: 77 },
-          { _id: 2, trend: 'Joe', popularity: 10 },
-          { _id: 3, trend: 'Laura', popularity: 34 }
         ]
       };
       const expectedState = {
@@ -68,14 +62,9 @@ describe('reducers:articles', () => {
           '1': { _id: 1, title: 'Article 1' },
           '2': { _id: 2, title: 'Article 2' },
           '3': { _id: 3, title: 'Article 3' }
-        },
-        trendsById: {
-          '1': { _id: 1, trend: 'Trump', popularity: 77 },
-          '2': { _id: 2, trend: 'Joe', popularity: 10 },
-          '3': { _id: 3, trend: 'Laura', popularity: 34 }
         }
       };
-      expect(articlesReducer(initialState, action)).to.eql(expectedState);
+      expect(articles(initialState, action)).to.eql(expectedState);
     });
   });
   describe('action:FETCH_DOMAIN', () => {
@@ -89,7 +78,7 @@ describe('reducers:articles', () => {
         loading: true,
         error: null
       };
-      expect(articlesReducer(initialState, action)).to.eql(expectedState);
+      expect(articles(initialState, action)).to.eql(expectedState);
     });
     it('handles ERROR', () => {
       const initialState = deepFreeze({
@@ -101,14 +90,13 @@ describe('reducers:articles', () => {
         loading: false,
         error: 'hello'
       };
-      expect(articlesReducer(initialState, action)).to.eql(expectedState);
+      expect(articles(initialState, action)).to.eql(expectedState);
     });
     it('handles SUCCESS', () => {
       const initialState = deepFreeze({
         loading: true,
         domain: {},
-        byId: {},
-        trendsById: {}
+        byId: {}
       });
       const action = {
         type: types.FETCH_DOMAIN_SUCCESS,
@@ -117,11 +105,6 @@ describe('reducers:articles', () => {
           { _id: 1, title: 'Article 1' },
           { _id: 2, title: 'Article 2' },
           { _id: 3, title: 'Article 3' }
-        ],
-        trends: [
-          { _id: 1, trend: 'Trump', popularity: 77 },
-          { _id: 2, trend: 'Joe', popularity: 10 },
-          { _id: 3, trend: 'Laura', popularity: 34 }
         ]
       };
       const expectedState = {
@@ -131,14 +114,9 @@ describe('reducers:articles', () => {
           '1': { _id: 1, title: 'Article 1' },
           '2': { _id: 2, title: 'Article 2' },
           '3': { _id: 3, title: 'Article 3' }
-        },
-        trendsById: {
-          '1': { _id: 1, trend: 'Trump', popularity: 77 },
-          '2': { _id: 2, trend: 'Joe', popularity: 10 },
-          '3': { _id: 3, trend: 'Laura', popularity: 34 }
         }
       };
-      expect(articlesReducer(initialState, action)).to.eql(expectedState);
+      expect(articles(initialState, action)).to.eql(expectedState);
     });
   });
   describe('action:FETCH_ARTICLE', () => {
@@ -152,7 +130,7 @@ describe('reducers:articles', () => {
         loading: true,
         error: null
       };
-      expect(articlesReducer(initialState, action)).to.eql(expectedState);
+      expect(articles(initialState, action)).to.eql(expectedState);
     });
     it('handles ERROR', () => {
       const initialState = deepFreeze({
@@ -164,13 +142,12 @@ describe('reducers:articles', () => {
         loading: false,
         error: 'hello'
       };
-      expect(articlesReducer(initialState, action)).to.eql(expectedState);
+      expect(articles(initialState, action)).to.eql(expectedState);
     });
     it('handles SUCCESS', () => {
       const initialState = deepFreeze({
         loading: true,
         byId: {},
-        trendsById: {},
         commentsById: {}
       });
       const action = {
@@ -182,11 +159,6 @@ describe('reducers:articles', () => {
           { _id: 1, author: 'some person', comment: 'this is a comment', threadId: null, articleId: 1, votes: 12 },
           { _id: 2, author: 'some person2', comment: 'this is a comment2', threadId: null, articleId: 1, votes: 23 },
           { _id: 3, author: 'some person3', comment: 'this is a comment3', threadId: null, articleId: 1, votes: 2 }
-        ],
-        trends: [
-          { _id: 1, trend: 'Trump', popularity: 77 },
-          { _id: 2, trend: 'Joe', popularity: 10 },
-          { _id: 3, trend: 'Laura', popularity: 34 }
         ]
       };
       const expectedState = {
@@ -194,19 +166,13 @@ describe('reducers:articles', () => {
         byId: {
           '1': { _id: 1, title: 'Article 1' }
         },
-        trendsById: {
-          '1': { _id: 1, trend: 'Trump', popularity: 77 },
-          '2': { _id: 2, trend: 'Joe', popularity: 10 },
-          '3': { _id: 3, trend: 'Laura', popularity: 34 }
-        },
         commentsById: {
           '1': { _id: 1, author: 'some person', comment: 'this is a comment', threadId: null, articleId: 1, votes: 12 },
           '2': { _id: 2, author: 'some person2', comment: 'this is a comment2', threadId: null, articleId: 1, votes: 23 },
           '3': { _id: 3, author: 'some person3', comment: 'this is a comment3', threadId: null, articleId: 1, votes: 2 }
         }
       };
-      expect(articlesReducer(initialState, action)).to.eql(expectedState);
+      expect(articles(initialState, action)).to.eql(expectedState);
     });
   });
-
 });

@@ -83,3 +83,24 @@ export function fetchTrends() {
       });
   };
 }
+
+export function fetchProperTrends() {
+  return function (dispatch) {
+    dispatch({
+      type: types.FETCH_PROPER_TRENDS_REQUEST
+    });
+    return axios.get(`${API_ROOT}/trends`)
+      .then(response => {
+        dispatch({
+          type: types.FETCH_PROPER_TRENDS_SUCCESS,
+          data: response.data
+        });
+      })
+      .catch(error => {
+        dispatch({
+          type: types.FETCH_PROPER_TRENDS_ERROR,
+          error
+        });
+      });
+  };
+}

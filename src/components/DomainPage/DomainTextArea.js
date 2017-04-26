@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class DomainTextArea extends React.Component {
@@ -12,9 +13,17 @@ class DomainTextArea extends React.Component {
   }
 }
 
+// TODO: refactor property names
+DomainTextArea.propTypes = {
+  domain: PropTypes.shape({
+    domainName: PropTypes.string.isRequired,
+    domainDescription: PropTypes.string.isRequired
+  })
+};
+
 function mapStateToProps(state) {
   return {
-    domain: state.articlesReducer.domain
+    domain: state.articles.domain
   };
 }
 

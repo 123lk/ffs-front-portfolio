@@ -14,13 +14,13 @@ export function sortCommentsByVotes(commentsById) {
   });
 }
 
-//map through all comments
-//add property children: []
-//loop through all comments
-//check if threadId is not null
-//if not null (e.g 2)
-//navigate to comment id (2)
-//push threadId (2) into children array of commentId(2) 
+// map through all comments
+// add property children: []
+// loop through all comments
+// check if threadId is not null
+// if not null (e.g 2)
+// navigate to comment id (2)
+// push threadId (2) into children array of commentId(2) 
 
 export function mapCommentChildren (commentsById) {
   _.map(commentsById, (comment) => {

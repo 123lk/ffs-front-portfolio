@@ -16,7 +16,7 @@ class ArticleTextArea extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    articleById: state.articlesReducer.byId
+    articleById: state.articles.byId
   };
 }
 

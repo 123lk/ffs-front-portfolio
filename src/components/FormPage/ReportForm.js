@@ -21,5 +21,4 @@ class ReportForm extends React.Component {
 }
 
 
-
 export default ReportForm;

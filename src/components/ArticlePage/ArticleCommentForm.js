@@ -15,7 +15,7 @@ class ArticleCommentForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.setState({ text: '' });
-    //write post request 
+    // write post request 
   }
 
   render() {
@@ -31,8 +31,6 @@ class ArticleCommentForm extends React.Component {
     );
   }
 }
-
-
 
 
 export default ArticleCommentForm;

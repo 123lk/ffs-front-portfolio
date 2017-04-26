@@ -1,8 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import * as actions from '../../actions';
+import {getTrendsByPopularity} from '../../reducers/trends.reducer';
+
 import TrendsBox from './TrendsBox';
 import UserNav from './UserNav';
 
 class NavBar extends React.Component {
+  componentDidMount () {
+    this.props.fetchTrends();
+  }
   render () {
     return (
       <div>
@@ -10,11 +18,30 @@ class NavBar extends React.Component {
           <UserNav/>
         </div>
         <div className="row trends-box">
-          <TrendsBox/>
+          <TrendsBox trends={this.props.trends} />
         </div>
       </div>
     );
   }
 }
 
-export default NavBar;
+NavBar.propTypes = {
+  trends: PropTypes.array.isRequired,
+  fetchTrends: PropTypes.func.isRequired
+};
+
+function mapStateToProps (state) {
+  return {
+    trends: getTrendsByPopularity(state.trends.byId)
+  };
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    fetchTrends: () => {
+      dispatch(actions.fetchProperTrends());
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

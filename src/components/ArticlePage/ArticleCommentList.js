@@ -20,7 +20,7 @@ class ArticleCommentList extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    comments: state.articlesReducer.commentsById
+    comments: state.articles.commentsById
   };
 }
 

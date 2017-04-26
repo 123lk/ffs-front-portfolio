@@ -21,7 +21,7 @@ class DomainApprovedFeed extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    articles: state.articlesReducer.byId
+    articles: state.articles.byId
   };
 }
 

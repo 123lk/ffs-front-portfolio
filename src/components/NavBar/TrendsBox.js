@@ -1,15 +1,14 @@
 import React from 'react';
-import TrendsBoxCard from './TrendsBoxCard'; 
-import { connect } from 'react-redux'; 
-import _ from 'underscore'; 
+import PropTypes from 'prop-types';
 
+import TrendsBoxCard from './TrendsBoxCard'; 
 
 class TrendsBox extends React.Component {
   render () {
     return (
       <div className="trends-box-inner">
       <h2><b>FFS Trending</b></h2>
-        {_.map(this.props.trends, (trend, i) => {
+        {this.props.trends.map((trend, i) => {
           return <TrendsBoxCard key={i} trend={trend.trend}/>;
         }).slice(0, 10)}
       </div>
@@ -17,10 +16,8 @@ class TrendsBox extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    trends: state.articlesReducer.trendsById
-  };
-}
+TrendsBox.propTypes = {
+  trends: PropTypes.array.isRequired
+};
 
-export default connect(mapStateToProps)(TrendsBox); 
+export default TrendsBox;
