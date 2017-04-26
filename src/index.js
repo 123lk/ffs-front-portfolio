@@ -22,7 +22,7 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
         <Route path="/reportform" component={FormPage} />
-        <Route path="/domain" component={DomainPage} />
+        <Route path="/domains/:id" component={DomainPage} />
         <Route path="/articles/:id" component={ArticlePage} />
       </Route>
     </Router>

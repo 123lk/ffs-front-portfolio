@@ -17,33 +17,40 @@ export function get(path) {
           { _id: 12, title: 'Article 12', domain: 'www.random12.com', description: 'this is some text about the article', articleIsFakeNews: true }
         ]
       });
-    case '/domain':
+    case '/domains/1':
       return Promise.resolve({
-        domain: { _id: 1, domainName: 'News company blah', registeredDomains: ['www.random1.com', 'www.random2.com'], domainDescription: 'an overview of the organisation' },
-        data: [
-          { _id: 1, title: 'Article 1', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-          { _id: 2, title: 'Article 2', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: false },
-          { _id: 3, title: 'Article 3', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-          { _id: 4, title: 'Article 4', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: false },
-          { _id: 5, title: 'Article 5', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-          { _id: 6, title: 'Article 6', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-          { _id: 7, title: 'Article 7', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-          { _id: 8, title: 'Article 8', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-          { _id: 9, title: 'Article 9', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-          { _id: 10, title: 'Article 10', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-          { _id: 11, title: 'Article 11', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-          { _id: 12, title: 'Article 12', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true }
-        ]
+        data: {
+          domainData: {
+            _id: 1,
+            domainName: 'News company blah',
+            registeredDomains: 'www.random1.com',
+            domainDescription: 'an overview of the organisation'
+          },
+          articles: [
+            { _id: 1, title: 'Article 1', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 2, title: 'Article 2', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: false },
+            { _id: 3, title: 'Article 3', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 4, title: 'Article 4', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: false },
+            { _id: 5, title: 'Article 5', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 6, title: 'Article 6', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 7, title: 'Article 7', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 8, title: 'Article 8', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 9, title: 'Article 9', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 10, title: 'Article 10', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 11, title: 'Article 11', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 12, title: 'Article 12', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true }
+          ]
+        }
       });
     case '/articles/1':
       return Promise.resolve({
         data: {
           articleData: {
-            _id: 1, 
-            title: 'Article 1', 
+            _id: 1,
+            title: 'Article 1',
             // TODO: refactor domain to domainId
-            domain: 'www.random1.com', 
-            description: 'this is some text about the article', 
+            domain: 'www.random1.com',
+            description: 'this is some text about the article',
             articleIsFakeNews: true
           },
           comments: [
@@ -64,14 +71,15 @@ export function get(path) {
       return Promise.resolve({
         data: {
           trends: [
-          { _id: 1, trend: 'Trump', popularity: 77 },
-          { _id: 2, trend: 'Joe', popularity: 10 },
-          { _id: 3, trend: 'Laura', popularity: 34 },
-          { _id: 4, trend: 'Tigers', popularity: 86 },
-          { _id: 5, trend: 'Corruption', popularity: 12 },
-          { _id: 6, trend: 'Unicorns', popularity: 19 },
-          { _id: 7, trend: 'Smallpox', popularity: 9 }
-        ]}
+            { _id: 1, trend: 'Trump', popularity: 77 },
+            { _id: 2, trend: 'Joe', popularity: 10 },
+            { _id: 3, trend: 'Laura', popularity: 34 },
+            { _id: 4, trend: 'Tigers', popularity: 86 },
+            { _id: 5, trend: 'Corruption', popularity: 12 },
+            { _id: 6, trend: 'Unicorns', popularity: 19 },
+            { _id: 7, trend: 'Smallpox', popularity: 9 }
+          ]
+        }
       });
   }
 }

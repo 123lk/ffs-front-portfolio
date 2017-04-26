@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import _ from 'underscore';
 import DomainFeedCard from './DomainFeedCard'; 
 
@@ -19,10 +18,5 @@ class DomainApprovedFeed extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    articles: state.articles.byId
-  };
-}
 
-export default connect(mapStateToProps)(DomainApprovedFeed);
+export default DomainApprovedFeed;

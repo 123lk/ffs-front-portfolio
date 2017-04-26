@@ -23,16 +23,15 @@ export function fetchHome() {
   };
 }
 
-export function fetchDomain() {
+// NOTE: fake API only works for /domain/1
+export function fetchDomain(id) {
   return function (dispatch) {
     dispatch({ type: types.FETCH_DOMAIN_REQUEST });
-    return axios.get(`${API_ROOT}/domain`)
+    return axios.get(`${API_ROOT}/domains/${id}`)
       .then(function (response) {
         dispatch({
           type: types.FETCH_DOMAIN_SUCCESS,
-          domain: response.domain,
-          articles: response.data,
-          trends: response.trends
+          data: response.data
         });
       })
       .catch(function (error) {
