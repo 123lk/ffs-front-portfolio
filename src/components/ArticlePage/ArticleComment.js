@@ -9,11 +9,9 @@ class ArticleComment extends React.Component {
           <h3 className="glyphicon glyphicon-arrow-down" aria-hidden="true"></h3>
         </div>
         <div className="rhs">
-          <span>
-            {this.props.author}
-            {this.props.comment}
-            {this.props.votes}
-          </span>
+          <h4> {this.props.author}</h4>
+          <h4> {this.props.comment}</h4>
+          <h4>{this.props.votes}</h4>
           <button type="button" className="btn btn-primary"><span className="glyphicon glyphicon-share-alt" aria-hidden="true"></span></button>
         </div>
       </div>
@@ -22,3 +20,4 @@ class ArticleComment extends React.Component {
 }
 
 export default ArticleComment;
+

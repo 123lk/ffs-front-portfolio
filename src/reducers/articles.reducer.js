@@ -4,7 +4,7 @@ import * as types from '../actions/types';
 export const initialState = {
   loading: false,
   error: null,
-  byId: {}, // TODO this is articles, don't get confused, maybe rename later 
+  byId: {}, 
   trendsById: {}, 
   domain: {},
   commentsById: {}

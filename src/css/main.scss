@@ -116,7 +116,7 @@ body {
 }
 
 .article-comment-list {
-  width: 60%;
+  width: 90%;
   background-color: white;
   border: solid darkslategray 1px;
   border-radius: 0.5em;
@@ -125,11 +125,9 @@ body {
     margin: 1.5em;
   }
   .comment-card {
-  width: 70%;
-  border: solid maroon 0.2em;
+  width: 100%;
+  border: solid maroon 0.1em;
   padding: 0;
-  border-radius: 0.5em;
-  margin-bottom: 2.5em;
   .vote {
     height: 5em;
     width: 20%;
