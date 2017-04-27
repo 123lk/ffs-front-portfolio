@@ -8,7 +8,6 @@ export const initialState = {
   commentsById: {}
 };
 
-// TODO: test
 export default function (prevState = initialState, action) {
   switch (action.type) {
     case types.FETCH_CURRENT_ARTICLE_REQUEST:

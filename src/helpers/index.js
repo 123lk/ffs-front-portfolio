@@ -7,16 +7,27 @@ export function normalizeArrayById(arr) {
   }, {});
 }
 
-// map through all comments
-// add property children: []
-// loop through all comments
-// check if threadId is not null
-// if not null (e.g 2)
-// navigate to comment id (2)
-// push threadId (2) into children array of commentId(2) 
+export function getCommentsByVotes(commentsById) {
+  return Object.values(commentsById)
+    .sort(function (a, b) {
+      return b.votes - a.votes;
+    });
+}
 
-export function mapCommentChildren (commentsById) {
-  _.map(commentsById, (comment) => {
-     return comment.children = [];
-  });
+export function mapCommentChildren(commentsById) {
+  let comments = Object.values(commentsById);
+  return normalizeArrayById(_.map(comments, (comment) => {
+    comment.children = [];
+    return comment;
+  }));
+}
+
+export function populateChildrenArray(commentsById) {
+  for (let key in commentsById) {
+    let parent = commentsById[key].threadId;
+    if (parent) {
+      commentsById[parent].children.push(Number(key));
+    }
+  }
+  return commentsById;
 }
