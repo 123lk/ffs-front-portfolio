@@ -70,7 +70,7 @@ describe('mapCommentChildren', function () {
   });
 });
 
-describe.only('populateChildrenArray', function () {
+describe('populateChildrenArray', function () {
   it('is a function', function () {
     expect(populateChildrenArray).to.be.a('function');
   });
