@@ -1,28 +1,24 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import _ from 'underscore';
+import PropTypes from 'prop-types';
 import DomainFeedCard from './DomainFeedCard'; 
 
-class DomainApprovedFeed extends React.Component {
-  render () {
-    return (
+const DomainApprovedFeed = ({articles}) => (
       <div>
         <h3>approved feed</h3>
-        {_.reduce(this.props.articles, (acc, article, i) => {
+        {_.reduce(articles, (acc, article, i) => {
           if (article.articleIsFakeNews) {
           acc.push(<DomainFeedCard key={i} title={article.title} domain={article.domain}/>);
-          }
+        }
           return acc; 
         },[]).slice(0, 5)}
       </div>
-    );
-  }
-}
 
-function mapStateToProps(state) {
-  return {
-    articles: state.articlesReducer.byId
-  };
-}
+);
 
-export default connect(mapStateToProps)(DomainApprovedFeed);
+DomainApprovedFeed.propTypes = {
+  articles: PropTypes.array.isRequired
+};
+
+
+export default DomainApprovedFeed;
