@@ -5,7 +5,7 @@ import DomainFeedCard from './DomainFeedCard';
 
 const DomainApprovedFeed = ({articles}) => (
       <div>
-        <h3>pending feed</h3>
+        <h3>approved feed</h3>
         {_.reduce(articles, (acc, article, i) => {
           if (article.articleIsFakeNews) {
           acc.push(<DomainFeedCard key={i} title={article.title} domain={article.domain}/>);
@@ -19,6 +19,7 @@ const DomainApprovedFeed = ({articles}) => (
 DomainApprovedFeed.propTypes = {
   articles: PropTypes.array.isRequired
 };
+
 
 
 export default DomainApprovedFeed;
