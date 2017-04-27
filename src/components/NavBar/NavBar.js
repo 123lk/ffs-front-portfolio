@@ -32,7 +32,7 @@ NavBar.propTypes = {
 
 function mapStateToProps (state) {
   return {
-    trends: getTrendsByPopularity(state.trends.byId)
+    trends: getTrendsByPopularity(state.trends.trendsById)
   };
 }
 
