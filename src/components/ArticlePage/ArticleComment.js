@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class ArticleComment extends React.Component {
   render() {
@@ -18,6 +19,12 @@ class ArticleComment extends React.Component {
     );
   }
 }
+
+ArticleComment.propTypes = {
+  author: PropTypes.string.isRequired,
+  comment: PropTypes.string.isRequired,
+  votes: PropTypes.number.isRequired
+};
 
 export default ArticleComment;
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class HomeNewsStoryFeedCard extends React.Component {
   render() {
@@ -15,5 +16,11 @@ class HomeNewsStoryFeedCard extends React.Component {
     );
   }
 }
+
+HomeNewsStoryFeedCard.propTypes = {
+  title: PropTypes.string,
+  domain: PropTypes.string
+};
+
 
 export default HomeNewsStoryFeedCard;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import HomeNewsStoryFeed from './HomeNewsStoryFeed';
 import HomeTextArea from './HomeTextArea';
 import * as actions from '../../actions/index.js';
@@ -29,5 +30,10 @@ function mapDispatchToProps(dispatch) {
     }
   };
 }
+
+HomePage.propTypes = {
+  fetchHome: PropTypes.func.isRequired
+};
+
 
 export default connect(null, mapDispatchToProps)(HomePage);
