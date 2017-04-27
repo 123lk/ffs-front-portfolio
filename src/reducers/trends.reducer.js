@@ -4,7 +4,7 @@ import {normalizeArrayById} from '../helpers';
 export const initialState = {
   loading: false,
   error: null,
-  byId: {}
+  trendsById: {}
 };
 
 export default function (prevState = initialState, action) {
@@ -22,7 +22,7 @@ export default function (prevState = initialState, action) {
     case types.FETCH_PROPER_TRENDS_SUCCESS:
       return Object.assign({}, prevState, {
         loading: false,
-        byId: normalizeArrayById(action.data.trends)
+        trendsById: normalizeArrayById(action.data.trends)
       });
     default:
       return prevState;
