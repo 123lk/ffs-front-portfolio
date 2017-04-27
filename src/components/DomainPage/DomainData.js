@@ -10,8 +10,8 @@ const DomainData = ({ domainName, domainDescription }) => (
 
 // TODO: refactor property names
 DomainData.propTypes = {
-  domainName: PropTypes.string.isRequired,
-  domainDescription: PropTypes.string.isRequired
+  domainName: PropTypes.string,
+  domainDescription: PropTypes.string
 };
 
 
