@@ -1,37 +1,58 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import DomainApprovedFeed from './DomainApprovedFeed';
 import DomainPendingFeed from './DomainPendingFeed';
-import DomainTextArea from './DomainTextArea';
+import DomainData from './DomainData';
 import * as actions from '../../actions/index.js';
 import { connect } from 'react-redux';
+import {getArticlesInOrder} from '../../reducers/domain.reducer';
 
 class DomainPage extends React.Component {
   componentDidMount() {
-    this.props.fetchDomain();
+    this.props.fetchDomain(this.props.params.id);
   }
   render() {
     return (
       <div>
         <div className="row domain-text-area">
-          <DomainTextArea />
+          <DomainData {...this.props.domainData}/>
         </div>
         <div className="row domain-approved-feed">
-          <DomainApprovedFeed />
+          <DomainApprovedFeed articles={this.props.articles}/>
         </div>
         <div className="row domain-pending-feed">
-          <DomainPendingFeed />
+          <DomainPendingFeed articles={this.props.articles}/>
         </div>
       </div>
     );
   }
 }
 
+DomainPage.propTypes = {
+  domainData: PropTypes.shape({
+    domainName: PropTypes.string,
+    domainDescription: PropTypes.string,
+  }),
+  articles: PropTypes.array.isRequired,
+  fetchDomain: PropTypes.func.isRequired,
+  params: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  })
+};
+
+function mapStateToProps(state) {
+  return {
+    domainData: state.domain.domainData,
+    articles: getArticlesInOrder (state.domain.domainArticlesById)
+  };
+}
+
 function mapDispatchToProps(dispatch) {
   return {
-    fetchDomain: () => {
-      dispatch(actions.fetchDomain());
+    fetchDomain: (id) => {
+      dispatch(actions.fetchDomain(id));
     }
   };
 }
 
-export default connect(null, mapDispatchToProps)(DomainPage);
+export default connect(mapStateToProps, mapDispatchToProps)(DomainPage);
