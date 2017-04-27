@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class TrendsBoxCard extends React.Component {
   render () {
@@ -11,5 +12,9 @@ class TrendsBoxCard extends React.Component {
     );
   }
 }
+
+TrendsBoxCard.propTypes = {
+  trend: PropTypes.string
+};
 
 export default TrendsBoxCard;
