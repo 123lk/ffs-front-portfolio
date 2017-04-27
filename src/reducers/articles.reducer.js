@@ -25,22 +25,6 @@ export default function (prevState = initialState, action) {
         loading: false,
         byId: normalizeArrayById(action.articles)
       });
-    case types.FETCH_DOMAIN_REQUEST:
-      return Object.assign({}, prevState, {
-        loading: true,
-        error: null
-      });
-    case types.FETCH_DOMAIN_ERROR:
-      return Object.assign({}, prevState, {
-        loading: false,
-        error: action.error
-      });
-    case types.FETCH_DOMAIN_SUCCESS:
-      return Object.assign({}, prevState, {
-        loading: false,
-        domain: action.domain, 
-        byId: normalizeArrayById(action.articles)
-      });
     default:
       return prevState;
   }
