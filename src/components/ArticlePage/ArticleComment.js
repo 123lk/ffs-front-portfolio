@@ -25,15 +25,16 @@ class ArticleComment extends React.Component {
     return (
       <div className="container-fluid comment-card">
         <div className="vote">
-          <h3 className="glyphicon glyphicon-arrow-up" aria-hidden="true"></h3>
-          <h3 className="glyphicon glyphicon-arrow-down" aria-hidden="true"></h3>
+          <div className="glyphicon glyphicon-arrow-up" aria-hidden="true"></div>
+          <div>{this.props.votes}</div>
+          <div className="glyphicon glyphicon-arrow-down" aria-hidden="true"></div>
         </div>
         <div className="rhs">
           <h4> {this.props.author}</h4>
           <h4> {this.props.comment}</h4>
-          <h4>{this.props.votes}</h4>
-          <a onClick= {this.onClickReply.bind(this)} type="button"><h6>Reply</h6></a>
-          <a onClick= {this.onClickShowComments.bind(this)} type="button"><h6>{this.showComments(this.props.length)}</h6></a>
+          <a onClick= {this.onClickReply.bind(this)} type="button"><span>Reply</span></a>
+          <div className="divider" />
+          <a onClick= {this.onClickShowComments.bind(this)} type="button"><span>{this.showComments(this.props.length)}</span></a>
         </div>
         {this.state.showReply && <ArticleCommentForm parentCommentId={this.props.parentCommentId}/>}
         {this.state.showComments && <div className="child-component">{this.props.renderComments(this.props.children)}</div>}
