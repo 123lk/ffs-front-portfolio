@@ -8,10 +8,9 @@ export function normalizeArrayById(arr) {
 }
 
 export function getCommentsByVotes(commentsById) {
-  return Object.values(commentsById)
-    .sort(function (a, b) {
-      return b.votes - a.votes;
-    });
+  return commentsById.sort(function (a, b) {
+    return b.votes - a.votes;
+  });
 }
 
 export function mapCommentChildren(commentsById) {
@@ -31,3 +30,38 @@ export function populateChildrenArray(commentsById) {
   }
   return commentsById;
 }
+
+// export function setCommentLevel(commentsById) {
+//   for (let key in commentsById) {
+//     commentsById[key].level = findCommentLevel(commentsById[key], commentsById);
+//   }
+//   return commentsById;
+// }
+
+// export function findCommentLevel(comment, commentsById) {
+//   if (comment.threadId === null) return 0;
+//   else {
+//     return 1 + findCommentLevel(commentsById[comment.threadId], commentsById);
+//   }
+// }
+
+export function sortChildCommentsByVote(commentsById) {
+  for (let key in commentsById) {
+    getCommentsByVotes(commentsById[key].children = _.map(commentsById[key].children, (commentId) => {
+      return commentsById[commentId];
+    }));
+  }
+  return commentsById;
+}
+
+export function setIndentationFormat(commentsById) {
+  return sortChildCommentsByVote(populateChildrenArray(mapCommentChildren(commentsById)));
+}
+
+export function filterBaseCommentsAndSortByVote(comments) {
+  return getCommentsByVotes(_.filter(comments, (comment) => {
+    return comment.threadId === null;
+  }));
+}
+
+

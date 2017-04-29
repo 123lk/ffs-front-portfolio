@@ -117,16 +117,16 @@ body {
 
 .article-comment-list {
   width: 90%;
-  background-color: white;
-  border: solid darkslategray 1px;
-  border-radius: 0.5em;
   margin: auto;
   .paginate {
     margin: 1.5em;
   }
   .comment-card {
   width: 100%;
-  border: solid maroon 0.1em;
+  border-left: solid darkslategray 1px;
+  border-top: solid darkslategray 1px;
+  border-right: solid darkslategray 1px;
+  background-color: white;
   padding: 0;
   .vote {
     height: 5em;
@@ -141,6 +141,10 @@ body {
   }
   }
 }
+
+.child-component {
+    padding-left: 2.5em;
+  }
 
 .domain-text-area {
   height: 35vh;
@@ -177,7 +181,7 @@ body {
 }
 
 .comment-form {
-  width: 60%;
+  width: 80%;
   margin: auto;
   margin-top: 3em;
 }

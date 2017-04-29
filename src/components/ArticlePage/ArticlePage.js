@@ -6,7 +6,7 @@ import ArticleCommentList from './ArticleCommentList';
 import ArticleTextArea from './ArticleData';
 import ArticleCommentForm from './ArticleCommentForm'; 
 import * as actions from '../../actions/index.js';
-import {getCommentsByVotes} from '../../reducers/currentArticle.reducer';
+import {setIndentationFormat} from '../../helpers/index';
 
 class ArticlePage extends React.Component {
   componentDidMount() {
@@ -15,15 +15,12 @@ class ArticlePage extends React.Component {
   render() {
     return (
       <div>
+        {console.log(this.props.comments)}
         <div className="row article-text-area">
           <ArticleTextArea {...this.props.articleData} />
         </div>
         <div className="row article-comment-list">
           <ArticleCommentList comments={this.props.comments} />
-
-          {/* TODO: refactor into its own component*/}
-          <button type="button" className="btn btn-primary paginate"><span className="glyphicon glyphicon-menu-left" aria-hidden="true"></span>  Previous</button>
-          <button type="button" className="btn btn-primary paginate"><span className="glyphicon glyphicon-menu-right" aria-hidden="true"></span>  Next</button>
         </div>
         <ArticleCommentForm />
       </div>
@@ -47,7 +44,7 @@ ArticlePage.propTypes = {
 function mapStateToProps (state) {
   return {
     articleData: state.currentArticle.articleData,
-    comments: getCommentsByVotes(state.currentArticle.commentsById)
+    comments: setIndentationFormat(state.currentArticle.commentsById)
   };
 }
 
