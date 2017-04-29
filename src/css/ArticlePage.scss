@@ -16,24 +16,37 @@
   }
   .comment-card {
   width: 100%;
-  border-left: solid darkslategray 1px;
-  border-top: solid darkslategray 1px;
-  border-right: solid darkslategray 1px;
+  border: solid darkslategray 1px;
+  // border-top: solid darkslategray 1px;
+  // border-right: solid darkslategray 1px;
   background-color: white;
-  padding: 0;
+  padding: 1em;
   .vote {
-    height: 5em;
+    height: 4em;
     width: 20%;
     float: left;
     margin: auto;
     display: block;
     font-size: 1.5em;
+    .vote-count {
+      font-size: 0.75em;
+    }
   }
   .rhs {
     position: relative;
+    .comment-author {
+      text-align: left;
+    }
   }
   }
 }
+
+Ï.glyphicon glyphicon-arrow-up {
+      margin-top: 50px;
+    }Ï
+    .glyphicon glyphicon-arrow-down {
+      margin-bottom: 50px;
+    }Ï
 
 .child-component {
     padding-left: 2.5em;
@@ -43,6 +56,7 @@
   width: 80%;
   margin: auto;
   margin-top: 1em;
+
 }
 
 .divider{
@@ -50,3 +64,4 @@
     height:auto;
     display:inline-block;
 }
+

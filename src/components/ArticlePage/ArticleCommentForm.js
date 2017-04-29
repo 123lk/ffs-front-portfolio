@@ -22,7 +22,7 @@ class ArticleCommentForm extends React.Component {
     return (
       <div className="comment-form">
         <div className="form-group">
-          <textarea className="form-control" rows="5" placeholder="Contribute to discussion..." onChange={this.handleChange} maxLength="2500"></textarea>
+          <textarea className="form-control" rows="1.5" placeholder="Contribute to discussion..." onChange={this.handleChange} maxLength="1000"></textarea>
         </div>
         <div className="button-part">
           <button type="button" className="btn btn-primary"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Comment</button>

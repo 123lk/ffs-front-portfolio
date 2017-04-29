@@ -26,12 +26,12 @@ class ArticleComment extends React.Component {
       <div className="container-fluid comment-card">
         <div className="vote">
           <div className="glyphicon glyphicon-arrow-up" aria-hidden="true"></div>
-          <div>{this.props.votes}</div>
+          <div className="vote-count">{this.props.votes}</div>
           <div className="glyphicon glyphicon-arrow-down" aria-hidden="true"></div>
         </div>
         <div className="rhs">
-          <h4> {this.props.author}</h4>
-          <h4> {this.props.comment}</h4>
+          <span className="comment-author"> {this.props.author}</span>
+          <div> {this.props.comment}</div>
           <a onClick= {this.onClickReply.bind(this)} type="button"><span>Reply</span></a>
           <div className="divider" />
           <a onClick= {this.onClickShowComments.bind(this)} type="button"><span>{this.showComments(this.props.length)}</span></a>
