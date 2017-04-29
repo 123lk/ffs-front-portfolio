@@ -1,0 +1,46 @@
+.article-text-area {
+  padding: 3em;
+  margin: 6em;
+  margin-top: 2em;
+  background-color: white;
+  border: solid darkslategray 1px;
+  border-radius: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.article-comment-list {
+  width: 90%;
+  margin: auto;
+  .paginate {
+    margin: 1.5em;
+  }
+  .comment-card {
+  width: 100%;
+  border-left: solid darkslategray 1px;
+  border-top: solid darkslategray 1px;
+  border-right: solid darkslategray 1px;
+  background-color: white;
+  padding: 0;
+  .vote {
+    height: 5em;
+    width: 20%;
+    float: left;
+    margin: auto;
+    display: block;
+    font-size: 1.5em;
+  }
+  .rhs {
+    position: relative;
+  }
+  }
+}
+
+.child-component {
+    padding-left: 2.5em;
+  }
+
+.comment-form {
+  width: 80%;
+  margin: auto;
+  margin-top: 3em;
+}

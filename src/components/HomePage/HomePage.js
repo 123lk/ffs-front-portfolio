@@ -4,6 +4,7 @@ import HomeNewsStoryFeed from './HomeNewsStoryFeed';
 import HomeTextArea from './HomeTextArea';
 import * as actions from '../../actions/index.js';
 import {connect} from 'react-redux';
+import '../../css/HomePage.scss';
 
 class HomePage extends React.Component {
   componentDidMount () {

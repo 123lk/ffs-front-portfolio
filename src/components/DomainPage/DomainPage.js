@@ -6,6 +6,8 @@ import DomainData from './DomainData';
 import * as actions from '../../actions/index.js';
 import { connect } from 'react-redux';
 import {getArticlesInOrder} from '../../reducers/domain.reducer';
+import '../../css/DomainPage.scss';
+
 
 class DomainPage extends React.Component {
   componentDidMount() {

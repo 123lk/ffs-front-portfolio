@@ -7,6 +7,7 @@ import ArticleTextArea from './ArticleData';
 import ArticleCommentForm from './ArticleCommentForm'; 
 import * as actions from '../../actions/index.js';
 import {setIndentationFormat} from '../../helpers/index';
+import '../../css/ArticlePage.scss';
 
 class ArticlePage extends React.Component {
   componentDidMount() {

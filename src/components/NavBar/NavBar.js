@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import * as actions from '../../actions';
 import {getTrendsByPopularity} from '../../reducers/trends.reducer';
+import '../../css/NavBar.scss';
+
 
 import TrendsBox from './TrendsBox';
 import UserNav from './UserNav';
