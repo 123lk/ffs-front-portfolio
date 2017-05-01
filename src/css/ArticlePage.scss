@@ -17,16 +17,17 @@
   .comment-card {
   width: 100%;
   border: solid darkslategray 1px;
-  // border-top: solid darkslategray 1px;
-  // border-right: solid darkslategray 1px;
   background-color: white;
   padding: 1em;
+  margin: 2em;
   .vote {
+    clear: both;
     height: 4em;
     width: 20%;
     float: left;
     margin: auto;
-    display: block;
+    padding-bottom: 2em;
+    // display: block;
     font-size: 1.5em;
     .vote-count {
       font-size: 0.75em;
@@ -34,6 +35,7 @@
   }
   .rhs {
     position: relative;
+    margin: auto;
     .comment-author {
       text-align: left;
     }
@@ -41,15 +43,9 @@
   }
 }
 
-Ï.glyphicon glyphicon-arrow-up {
-      margin-top: 50px;
-    }Ï
-    .glyphicon glyphicon-arrow-down {
-      margin-bottom: 50px;
-    }Ï
-
 .child-component {
     padding-left: 2.5em;
+    margin: auto;
   }
 
 .comment-form {
@@ -64,3 +60,14 @@
     display:inline-block;
 }
 
+.glyphicon glyphicon-arrow-down {
+  margin-bottom: 10px;
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}

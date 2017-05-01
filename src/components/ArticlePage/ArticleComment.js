@@ -28,6 +28,7 @@ class ArticleComment extends React.Component {
           <div className="glyphicon glyphicon-arrow-up" aria-hidden="true"></div>
           <div className="vote-count">{this.props.votes}</div>
           <div className="glyphicon glyphicon-arrow-down" aria-hidden="true"></div>
+          <div className="clearfix"></div>
         </div>
         <div className="rhs">
           <span className="comment-author"> {this.props.author}</span>

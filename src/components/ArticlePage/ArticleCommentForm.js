@@ -25,7 +25,7 @@ class ArticleCommentForm extends React.Component {
           <textarea className="form-control" rows="1.5" placeholder="Contribute to discussion..." onChange={this.handleChange} maxLength="1000"></textarea>
         </div>
         <div className="button-part">
-          <button type="button" className="btn btn-primary"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Comment</button>
+          <button type="button" className="btn btn-primary btn-xs"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Comment</button>
         </div>
       </div>
     );
