@@ -33,10 +33,12 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "autocomplete.js": "^0.28.1",
     "axios": "^0.16.1",
     "bootstrap": "^3.3.7",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
+    "react-algoliasearch": "^2.1.0",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^3.0.5",
