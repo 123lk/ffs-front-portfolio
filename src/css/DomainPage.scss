@@ -1,25 +1,34 @@
 .domain-text-area {
-  height: 35vh;
-  border: solid mediumslateblue 0.2em;
+  padding: 3em;
+  margin: 6em;
+  margin-top: 2em;
+  background-color: white;
+  border: solid darkslategray 1px;
+  border-radius: 0.5em;
   margin-bottom: 1.5em;
 }
 
 .domain-approved-feed {
   width: 60%;
-  border: solid orangered 0.2em;
+  background-color: white;
+  border: solid darkslategray 1px;
+  border-radius: 0.5em;
   margin: auto;
-  margin-bottom: 4em;
 }
 
 .domain-pending-feed {
   width: 60%;
-  border: solid orangered 0.2em;
+  background-color: white;
+  border: solid darkslategray 1px;
+  border-radius: 0.5em;
   margin: auto;
+  margin-top: 2em;
 }
 
 
-.domain-approved-feed-card {
-  height: 10vh;
-  border: solid hotpink 0.2em;
-  margin-bottom: 1.5em;
+.domain-feed-card {
+  width: 70%;
+  border: solid grey 0.2em;
+  border-radius: 0.5em;
+  margin-bottom: 2.5em;
 }
