@@ -1,0 +1,33 @@
+.home-text-area {
+  padding: 3em;
+  margin: 6em;
+  margin-top: 2em;
+  background-color: white;
+  border: solid darkslategray 1px;
+  border-radius: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.home-news-story-feed {
+  width: 60%;
+  background-color: white;
+  border: solid darkslategray 1px;
+  border-radius: 0.5em;
+  margin: auto;
+  .home-news-story-feed-card {
+  width: 70%;
+  border: solid grey 0.2em;
+  border-radius: 0.5em;
+  margin-bottom: 2.5em;
+  .picture-div {
+    width: 8vh;
+    height: 100%;
+    padding: 0;
+    float: left;
+    img {
+    width: 100%;
+    height: 100%;
+    }
+    }
+  }
+}

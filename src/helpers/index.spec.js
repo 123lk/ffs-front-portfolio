@@ -175,7 +175,7 @@ describe('sortChildCommentsByVote', function () {
       3: { _id: 3, author: 'some person2', comment: 'this is a comment2', threadId: 1, articleId: 1, votes: 14, children: [], level: 1 },
       4: { _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 1, articleId: 1, votes: 15, children: [], level: 1 }
     };
-    expect(actual).to.eql(expected); 
+    expect(actual).to.eql(expected);
   });
 });
 
@@ -201,18 +201,18 @@ describe('setIndentationFormat', function () {
     };
     let actual = setIndentationFormat(commentsById);
     let expected = {
-      1: { _id: 1, author: 'some person', comment: 'this is a comment', threadId: null, articleId: 1, votes: 12, children: [{ _id: 2, author: 'some person2', comment: 'this is a comment2', threadId: 1, articleId: 1, votes: 23, children: [{ _id: 3, author: 'some person2', comment: 'this is a comment2', threadId: 2, articleId: 1, votes: 23, children: [{ _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 3, articleId: 1, votes: 23, children: []}]}] }]},
-      2: { _id: 2, author: 'some person2', comment: 'this is a comment2', threadId: 1, articleId: 1, votes: 23, children: [{ _id: 3, author: 'some person2', comment: 'this is a comment2', threadId: 2, articleId: 1, votes: 23, children: [{ _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 3, articleId: 1, votes: 23, children: []}]}] },
-      3: { _id: 3, author: 'some person2', comment: 'this is a comment2', threadId: 2, articleId: 1, votes: 23, children: [{ _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 3, articleId: 1, votes: 23, children: []}]},
-      4: { _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 3, articleId: 1, votes: 23, children: []}
+      1: { _id: 1, author: 'some person', comment: 'this is a comment', threadId: null, articleId: 1, votes: 12, children: [{ _id: 2, author: 'some person2', comment: 'this is a comment2', threadId: 1, articleId: 1, votes: 23, children: [{ _id: 3, author: 'some person2', comment: 'this is a comment2', threadId: 2, articleId: 1, votes: 23, children: [{ _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 3, articleId: 1, votes: 23, children: [] }] }] }] },
+      2: { _id: 2, author: 'some person2', comment: 'this is a comment2', threadId: 1, articleId: 1, votes: 23, children: [{ _id: 3, author: 'some person2', comment: 'this is a comment2', threadId: 2, articleId: 1, votes: 23, children: [{ _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 3, articleId: 1, votes: 23, children: [] }] }] },
+      3: { _id: 3, author: 'some person2', comment: 'this is a comment2', threadId: 2, articleId: 1, votes: 23, children: [{ _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 3, articleId: 1, votes: 23, children: [] }] },
+      4: { _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 3, articleId: 1, votes: 23, children: [] }
     };
     expect(actual).to.eql(expected);
   });
 });
 
-describe('filterBaseCommentsAndSortByVote', function () {
+describe.only('filterBaseCommentsAndSortByVote', function () {
   it('is a function', function () {
-    expect(filterBaseCommentsAndSortByVote).to.be.a('function'); 
+    expect(filterBaseCommentsAndSortByVote).to.be.a('function');
   });
   it('returns an array', function () {
     let comments = {
@@ -222,6 +222,19 @@ describe('filterBaseCommentsAndSortByVote', function () {
       4: { _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 3, articleId: 1, votes: 23, children: [], level: 3 }
     };
     expect(filterBaseCommentsAndSortByVote(comments)).to.be.an('array');
+  });
+  it('returns an array of only base comments orderd by highest vote', function () {
+    let comments = {
+      1: { _id: 1, author: 'some person', comment: 'this is a comment', threadId: null, articleId: 1, votes: 12, children: [2], level: 0 },
+      2: { _id: 2, author: 'some person2', comment: 'this is a comment2', threadId: 1, articleId: 1, votes: 23, children: [3], level: 1 },
+      3: { _id: 3, author: 'some person2', comment: 'this is a comment2', threadId: 2, articleId: 1, votes: 23, children: [4], level: 2 },
+      4: { _id: 4, author: 'some person2', comment: 'this is a comment2', threadId: 3, articleId: 1, votes: 23, children: [], level: 3 }
+    };
+    let actual = filterBaseCommentsAndSortByVote(comments);
+    let expected = [
+      { _id: 1, author: 'some person', comment: 'this is a comment', threadId: null, articleId: 1, votes: 12, children: [2], level: 0 }
+    ];
+    expect(actual).to.eql(expected);
   });
 });
 
