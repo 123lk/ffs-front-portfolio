@@ -24,11 +24,10 @@ class ArticleComment extends React.Component {
   render() {
     return (
       <div className="container-fluid comment-card">
-        <div className="vote">
+        <div className="container vote">
           <div className="glyphicon glyphicon-arrow-up" aria-hidden="true"></div>
           <div className="vote-count">{this.props.votes}</div>
           <div className="glyphicon glyphicon-arrow-down" aria-hidden="true"></div>
-          <div className="clearfix"></div>
         </div>
         <div className="rhs">
           <span className="comment-author"> {this.props.author}</span>

@@ -11,6 +11,7 @@
 .article-comment-list {
   width: 90%;
   margin: auto;
+  overflow: hidden;
   .paginate {
     margin: 1.5em;
   }
@@ -18,16 +19,18 @@
   width: 100%;
   border: solid darkslategray 1px;
   background-color: white;
-  padding: 1em;
-  margin: 2em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  margin-top: 1.5em;
   .vote {
-    clear: both;
+    clear: left;
     height: 4em;
     width: 20%;
     float: left;
     margin: auto;
     padding-bottom: 2em;
-    // display: block;
+    display: block;
     font-size: 1.5em;
     .vote-count {
       font-size: 0.75em;
