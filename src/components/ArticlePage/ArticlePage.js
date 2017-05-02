@@ -17,10 +17,10 @@ class ArticlePage extends React.Component {
     return (
       <div>
         {console.log(this.props.comments)}
-        <div className="row article-text-area">
+        <div className="article-text-area">
           <ArticleTextArea {...this.props.articleData} />
         </div>
-        <div className="row article-comment-list">
+        <div className="article-comment-list">
           <ArticleCommentList comments={this.props.comments} />
         </div>
         <ArticleCommentForm />
@@ -35,7 +35,12 @@ ArticlePage.propTypes = {
     domain: PropTypes.string,
     description: PropTypes.string
   }),
-  comments: PropTypes.array.isRequired,
+  comments: PropTypes.shape({
+    author: PropTypes.string,
+    children: PropTypes.array,
+    comment: PropTypes.string,
+    votes: PropTypes.number
+  }),
   fetchCurrentArticle: PropTypes.func.isRequired,
   params: PropTypes.shape({
     id: PropTypes.string.isRequired

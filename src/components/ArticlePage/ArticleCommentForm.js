@@ -3,7 +3,7 @@ import React from 'react';
 class ArticleCommentForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: ''};
+    this.state = { text: '' };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -20,13 +20,13 @@ class ArticleCommentForm extends React.Component {
 
   render() {
     return (
-      <div className="comment-form">
-        <div className="form-group">
-          <textarea className="form-control" rows="1.5" placeholder="Contribute to discussion..." onChange={this.handleChange} maxLength="1000"></textarea>
-        </div>
-        <div className="button-part">
-          <button type="button" className="btn btn-primary btn-xs"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Comment</button>
-        </div>
+      <div className="field comment-box">
+        <p className="control">
+          <textarea className="textarea" placeholder="Contribute to discussion..."></textarea>
+        </p>
+        <p className="control">
+          <button className="button is-primary">Submit</button>
+        </p>
       </div>
     );
   }

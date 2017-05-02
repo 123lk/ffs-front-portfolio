@@ -25,7 +25,12 @@ const ArticleCommentList = ({ comments }) => {
 };
 
 ArticleCommentList.propTypes = {
-  comments: PropTypes.array.isRequired
+  comments: PropTypes.shape({
+    author: PropTypes.string,
+    children: PropTypes.array,
+    comment: PropTypes.string,
+    votes: PropTypes.number
+  }),
 };
 
 export default ArticleCommentList;
