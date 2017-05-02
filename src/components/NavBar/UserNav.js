@@ -6,7 +6,7 @@ class UserNav extends React.Component {
     super(props);
     this.state = {
       navIsActive: false,
-      menuClass: 'nav-right nav-menu is-active'
+      menuClass: 'nav-right nav-menu'
     };
   }
   render() {
