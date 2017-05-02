@@ -1,6 +1,5 @@
 import React from 'react';
 import NavBar from './NavBar/NavBar';
-import '../css/main.scss';
 import 'bulma/css/bulma.css';
 import PropTypes from 'prop-types';
 
