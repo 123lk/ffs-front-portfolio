@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SearchBar from '../AdditionalComponents/SearchBar';
 
 const DomainData = ({ domainName, domainDescription }) => (
   <div>
     <h3>{domainName}</h3>
     <p>{domainDescription}</p>
+    <SearchBar/>
   </div>
 );
 

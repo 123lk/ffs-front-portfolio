@@ -1,0 +1,39 @@
+.SearchResults {
+  width: 50vw;
+}
+
+.SearchResults :hover {
+  background-color:white;
+  color: black;
+}
+
+.result {
+  color: white;
+  text-align: center;
+  background-color: black;
+  margin-top: 0;
+  .hit-name {
+    margin: auto;
+    width: 80%;
+    border: 1px solid green;
+  }
+}
+
+.ais-InstantSearch__root {
+  width: 75%;
+  margin: auto;
+}
+
+.ais-SearchBox_wrapper {
+  width: 100%;
+}
+
+.ais-SearchBox__input {
+  width: 100%;
+  margin: auto;
+}
+
+.ais-SearchBox__root {
+  width: 100%;
+  max-width: 1000px;
+}

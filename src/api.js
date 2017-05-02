@@ -3,7 +3,7 @@ export function get(path) {
     case '/home':
       return Promise.resolve({
         data: [
-          { _id: 1, title: 'Article 1', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+          { '_id': 1, 'title': 'Article 1', 'domain': 'www.random1.com', 'description': 'this is some text about the article', 'articleIsFakeNews': true },
           { _id: 2, title: 'Article 2', domain: 'www.random2.com', description: 'this is some text about the article', articleIsFakeNews: false },
           { _id: 3, title: 'Article 3', domain: 'www.random3.com', description: 'this is some text about the article', articleIsFakeNews: true },
           { _id: 4, title: 'Article 4', domain: 'www.random4.com', description: 'this is some text about the article', articleIsFakeNews: false },
