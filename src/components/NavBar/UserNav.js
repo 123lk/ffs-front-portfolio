@@ -5,20 +5,29 @@ class UserNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      navIsActive: false
+      navIsActive: false,
+      menuClass: 'nav-right nav-menu is-active'
     };
   }
   render() {
     return (
-      <div className='nav-right nav-menu'>
+      <div id= 'navigation' className ='nav'>
+        <div className='nav-toggle' onClick={toggleMenu.bind(this)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div className ='nav-left'>
         <a className='nav-item' href="http://localhost:9090/">Create account</a>
-        <a className='nav-item' href="http://localhost:9090/">Log in</a>
-        <a className='nav-item' href="http://localhost:9090/reportform">Report fake news</a>
-        <a className='nav-item' href="http://localhost:9090/">FFS Chrome App</a>
-        <div className='nav-toggle' onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
+        </div>
+
+        <div id='menu' className={this.state.menuClass}>
+         
+          <a className='nav-item' href="http://localhost:9090/">Create account</a>
+          <a className='nav-item' href="http://localhost:9090/">Log in</a>
+          <a className='nav-item' href="http://localhost:9090/reportform">Report fake news</a>
+          <a className='nav-item' href="http://localhost:9090/">FFS Chrome App</a>
         </div>
       </div>
     );
@@ -26,11 +35,20 @@ class UserNav extends React.Component {
 }
 
 function toggleMenu() {
-  this.setState({
-    navIsActive: !this.state.navIsActive
-});
-console.log(this.state.navIsActive);
-  
- }
+  if (this.state.navIsActive) {
+    this.setState({
+      navIsActive: !this.state.navIsActive,
+      menuClass: 'nav-right nav-menu'
+    });
+  }
+  else {
+    this.setState({
+      navIsActive: !this.state.navIsActive,
+      menuClass: 'nav-right nav-menu is-active'
+    });
+  }
+
+
+}
 
 export default UserNav;

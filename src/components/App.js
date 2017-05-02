@@ -1,14 +1,15 @@
 import React from 'react';
-import NavBar from './NavBar/NavBar';
+import UserNav from './NavBar/UserNav';
 import 'bulma/css/bulma.css';
+import '../css/app.scss';
 import PropTypes from 'prop-types';
 
 class App extends React.Component {
   render () {
     return (
       <div>
-         <div className="nav">
-            <NavBar />
+         <div>
+            <UserNav />
           </div>
           <div className="content">
             <div>
