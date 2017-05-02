@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 class HomeNewsStoryFeed extends React.Component {
   render() {
     return (
-      <div>
+      <div className="feed">
         <h3><b>Recent Fake News</b></h3>
         {_.map(this.props.articles, (article, i) => {
           return <HomeNewsStoryFeedCard key={i} title={article.title} domain={article.domain} />;
