@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from './NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/main.scss';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
   render () {
@@ -19,5 +20,9 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+    children: PropTypes.element.isRequired
+};
 
 export default App;
