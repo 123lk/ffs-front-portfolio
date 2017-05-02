@@ -6,7 +6,7 @@ import {getTrendsByPopularity} from '../../reducers/trends.reducer';
 import '../../css/NavBar.scss';
 
 
-import TrendsBox from './TrendsBox';
+
 import UserNav from './UserNav';
 
 class NavBar extends React.Component {
@@ -15,14 +15,9 @@ class NavBar extends React.Component {
   }
   render () {
     return (
-      <div>
-        <div className="row user-nav">
+        <div className="nav-item">
           <UserNav/>
         </div>
-        <div className="row trends-box">
-          <TrendsBox trends={this.props.trends} />
-        </div>
-      </div>
     );
   }
 }

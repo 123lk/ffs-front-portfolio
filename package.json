@@ -36,6 +36,7 @@
     "autocomplete.js": "^0.28.1",
     "axios": "^0.16.1",
     "bootstrap": "^3.3.7",
+    "bulma": "^0.4.0",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-algoliasearch": "^2.1.0",

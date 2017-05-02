@@ -1,6 +1,7 @@
 .user-nav{
-  background-color:#F5F8FA;
   font-size: 1em;
+  border: solid black 1px;
+  border-radius: 0.5em;
   img {
     width: 10em;
     height: 8em; 
@@ -13,11 +14,9 @@
     margin-top: 0.2em;
   }
   .user-nav-box {
-    border: solid darkslategray 1px;
     background-color: white;
-    border-radius: 0.5em;
-    width: 75%;
     margin: auto;
+    margin-top: 2em;
   }
   .search-bar {
     text-align: center;
@@ -29,22 +28,20 @@
 }
 
 .trends-box{
-  background-color:#F5F8FA;
-  padding: 0.4em;
   .trends-box-inner {
     h2 {
-      font-size: 1.6em;
+      font-size: 1.4em;
+      margin-bottom: 0.8em;
     }
     p {
       font-size: 1.2em;
       color: #3E82C1;
     }
     background-color: white;
-    border-radius: 0.5em;
-    width: 75%;
     margin: auto;
-    margin-top: 5em;
-    margin-bottom: 5em;
-    border: solid darkslategray 1px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: solid black 1px;
+    border-radius: 0.5em;
   }
 }
