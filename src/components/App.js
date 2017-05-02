@@ -7,15 +7,15 @@ import PropTypes from 'prop-types';
 class App extends React.Component {
   render () {
     return (
-      <div className="">
+      <div>
          <div className="nav">
             <NavBar />
-        <div className="columns">
           </div>
-          <div className="column">
-            {this.props.children} 
+          <div className="content">
+            <div>
+              {this.props.children} 
+            </div>
           </div>
-        </div>
       </div>
     );
   }
