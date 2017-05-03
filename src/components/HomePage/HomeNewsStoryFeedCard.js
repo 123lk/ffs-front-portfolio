@@ -12,8 +12,8 @@ class HomeNewsStoryFeedCard extends React.Component {
             </div>
           </div>
         <div className="media-content">
-          <h4 className="title-is-4"><b>{this.props.title}</b></h4>
-          <a href={this.props.articleUrl}></a>
+          <a className="article-title" href={this.props.articleUrl}>{this.props.title}</a>
+          <p className="title is-4">{this.props.organisation}</p>
         </div>
         </div>
       </div>
@@ -23,23 +23,9 @@ class HomeNewsStoryFeedCard extends React.Component {
 
 HomeNewsStoryFeedCard.propTypes = {
   title: PropTypes.string,
-  articleUrl: PropTypes.string
+  articleUrl: PropTypes.string,
+  organisation: PropTypes.string
 };
 
 
 export default HomeNewsStoryFeedCard;
-
-
-{/*<div className="card">
-  <div className="card-content">
-    <div className="media">
-      <div className="media-left">
-        <figure className="image is-48x48">
-          <img src="http://blog.lostcollective.com/wp-content/uploads/2016/08/the-guardian-logo.png" alt="Image">
-        </figure>
-      </div>
-      <div className="media-content">
-        <p className="title is-4">{this.props.title}</p>
-        <p className="subtitle is-6">{this.props.domain}</p>
-      </div>
-    </div>*/}
