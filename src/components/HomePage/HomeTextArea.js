@@ -1,11 +1,12 @@
 import React from 'react';
+import Title from '../../icons/Logo-Type-Horizontal.png';
 
 class HomeTextArea extends React.Component {
   render () {
     return (
       <div>
-        <h1><b>For Fact's Sake</b></h1>
-        <p>If the red flag flies, it’s probably lies.</p>
+        <img className="title" src={Title}/>
+        <p className="sub-title">If the red flag flies, it’s probably lies.</p>
       </div>
     );
   }

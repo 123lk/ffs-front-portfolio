@@ -32,7 +32,7 @@ class ReportForm extends React.Component {
     axios.post(`${API_ROOT}/articles`, {
       href: this.state.url,
       title: this.state.title,
-      description: this.state.text,
+      comment: this.state.text,
       userId: 1
     })
     .then((response) => {

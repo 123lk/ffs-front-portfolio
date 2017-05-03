@@ -1,7 +1,6 @@
 .home-text-area {
   margin-top: 0.5em;
   text-align: center;
-  margin: auto;
   background-color: white;
   padding: 1em;
 }
@@ -27,4 +26,17 @@
 
 .media-content {
   margin: 1em;
+}
+
+.title {
+  max-width: 1000px;
+  margin-bottom: 0;
+}
+
+.title:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.sub-title {
+  font-size: 1.5rem;
 }

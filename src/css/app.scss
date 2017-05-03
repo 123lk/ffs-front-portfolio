@@ -1,7 +1,13 @@
+@import 'fonts.scss';
+
 #navigation {
   background-color: #EC0000;
 }
 
 a.nav-item {
   color: black;
+}
+
+body {
+  font-family: 'Decalotype-Black';
 }
