@@ -1,4 +1,8 @@
 import React from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+
+const API_ROOT = 'https://cwr4mc2ure.execute-api.eu-west-2.amazonaws.com/dev';
 
 class ArticleCommentForm extends React.Component {
   constructor(props) {
@@ -9,28 +13,46 @@ class ArticleCommentForm extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ text: event.target.text });
+    this.setState({ text: event.target.value });
   }
 
   handleSubmit(event) {
+    if (this.state.text === '') return;
     event.preventDefault();
+    axios.post(`${API_ROOT}/articles/1`, {
+      comment: this.state.text,
+      userName: 'joecaine',
+      userId: 1,
+      threadId: this.props.threadId,
+      articleId: this.props.articleId
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
     this.setState({ text: '' });
-    // write post request 
   }
 
   render() {
     return (
       <div className="field comment-box">
         <p className="control">
-          <textarea className="textarea" placeholder="Contribute to discussion..."></textarea>
+          <textarea className="textarea" placeholder="Contribute to discussion..." onChange={this.handleChange.bind(this)} ></textarea>
         </p>
         <p className="control">
-          <button className="button is-primary">Submit</button>
+          <button onClick={this.handleSubmit} className="button is-primary">Submit</button>
         </p>
       </div>
     );
   }
 }
+
+ArticleCommentForm.propTypes = {
+  articleId: PropTypes.number.isRequired,
+  threadId: PropTypes.number
+};
 
 
 export default ArticleCommentForm;

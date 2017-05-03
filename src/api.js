@@ -27,18 +27,18 @@ export function get(path) {
             domainDescription: 'an overview of the organisation'
           },
           articles: [
-            { _id: 1, title: 'Article 1', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-            { _id: 2, title: 'Article 2', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: false },
-            { _id: 3, title: 'Article 3', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-            { _id: 4, title: 'Article 4', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: false },
-            { _id: 5, title: 'Article 5', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-            { _id: 6, title: 'Article 6', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-            { _id: 7, title: 'Article 7', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-            { _id: 8, title: 'Article 8', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-            { _id: 9, title: 'Article 9', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-            { _id: 10, title: 'Article 10', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-            { _id: 11, title: 'Article 11', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
-            { _id: 12, title: 'Article 12', domain: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true }
+            { _id: 1, title: 'Article 1', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 2, title: 'Article 2', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: false },
+            { _id: 3, title: 'Article 3', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 4, title: 'Article 4', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: false },
+            { _id: 5, title: 'Article 5', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 6, title: 'Article 6', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 7, title: 'Article 7', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 8, title: 'Article 8', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 9, title: 'Article 9', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 10, title: 'Article 10', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 11, title: 'Article 11', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true },
+            { _id: 12, title: 'Article 12', articleUrl: 'www.random1.com', description: 'this is some text about the article', articleIsFakeNews: true }
           ]
         }
       });
@@ -64,20 +64,6 @@ export function get(path) {
             { _id: 8, author: 'some person8', comment: 'this is a comment8', threadId: 4, articleId: 1, votes: 59 },
             { _id: 9, author: 'some person9', comment: 'this is a comment9', threadId: 4, articleId: 1, votes: 200 },
             { _id: 10, author: 'some person10', comment: 'this is a comment10', threadId: 9, articleId: 1, votes: 90 }
-          ]
-        }
-      });
-    case '/trends':
-      return Promise.resolve({
-        data: {
-          trends: [
-            { _id: 1, trend: 'Trump', popularity: 77 },
-            { _id: 2, trend: 'Joe', popularity: 10 },
-            { _id: 3, trend: 'Laura', popularity: 34 },
-            { _id: 4, trend: 'Tigers', popularity: 86 },
-            { _id: 5, trend: 'Corruption', popularity: 12 },
-            { _id: 6, trend: 'Unicorns', popularity: 19 },
-            { _id: 7, trend: 'Smallpox', popularity: 9 }
           ]
         }
       });

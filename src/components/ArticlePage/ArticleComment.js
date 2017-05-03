@@ -40,7 +40,7 @@ class ArticleComment extends React.Component {
           </div>
           <a onClick={this.onClickShowComments.bind(this)}  type="button"><span className= "showComment">{this.showComments(this.props.length)}</span></a>
           <a onClick={this.onClickReply.bind(this)} type="button"><span className="reply">Reply</span></a>
-          {this.state.showReply && <ArticleCommentForm parentCommentId={this.props.parentCommentId} />}
+          {this.state.showReply && <ArticleCommentForm articleId={this.props.articleId} threadId={this.props.parentCommentId} />}
           <div className="" />
         </div>
         {this.state.showComments && <div className="child-component">{this.props.renderComments(this.props.children)}</div>}
@@ -54,7 +54,8 @@ ArticleComment.propTypes = {
   comment: PropTypes.string.isRequired,
   votes: PropTypes.number.isRequired,
   parentCommentId: PropTypes.number.isRequired,
-  length: PropTypes.number.isRequired
+  length: PropTypes.number.isRequired,
+  articleId: PropTypes.number.isRequired
 };
 
 

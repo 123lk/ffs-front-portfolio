@@ -1,7 +1,7 @@
-import * as axios from '../api';
+import axios from 'axios';
 import * as types from './types';
 
-const API_ROOT = ''; // TODO: fill in when back end is done
+const API_ROOT = 'https://cwr4mc2ure.execute-api.eu-west-2.amazonaws.com/dev';
 
 export function fetchHome() {
   return function (dispatch) {
@@ -10,8 +10,7 @@ export function fetchHome() {
       .then(function (response) {
         dispatch({
           type: types.FETCH_HOME_SUCCESS,
-          articles: response.data,
-          trends: response.trends
+          articles: response.data
         });
       })
       .catch(function (error) {

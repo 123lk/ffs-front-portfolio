@@ -10,7 +10,7 @@ const ArticleCommentList = ({ comments }) => {
 
   let renderComments = function (comments) {
     return _.reduce(comments, (acc, comment, i) => {
-      acc.push(<ArticleComment key={i} author={comment.author} comment={comment.comment} votes={comment.votes} parentCommentId={comment._id} length={comment.children.length} renderComments={renderComments} children={comment.children} />);
+      acc.push(<ArticleComment key={i} author={comment.author} comment={comment.comment} votes={comment.votes} parentCommentId={comment._id} length={comment.children.length} renderComments={renderComments} children={comment.children} articleId={comment.articleId}/>);
       return acc;
     }, []);
   };
@@ -29,7 +29,8 @@ ArticleCommentList.propTypes = {
     author: PropTypes.string,
     children: PropTypes.array,
     comment: PropTypes.string,
-    votes: PropTypes.number
+    votes: PropTypes.number,
+    articleId: PropTypes.number
   }),
 };
 
