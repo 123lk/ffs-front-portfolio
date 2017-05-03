@@ -34,6 +34,7 @@ DomainPage.propTypes = {
   domainData: PropTypes.shape({
     organisationName: PropTypes.string,
     domainDescription: PropTypes.string,
+    registeredDomain: PropTypes.string
   }),
   articles: PropTypes.array.isRequired,
   fetchDomain: PropTypes.func.isRequired,

@@ -32,8 +32,9 @@ class ArticlePage extends React.Component {
 ArticlePage.propTypes = {
   articleData: PropTypes.shape({
     title: PropTypes.string,
-    domain: PropTypes.string,
-    description: PropTypes.string
+    aritcleUrl: PropTypes.string,
+    description: PropTypes.string,
+    organisation: PropTypes.string
   }),
   comments: PropTypes.shape({
     author: PropTypes.string,

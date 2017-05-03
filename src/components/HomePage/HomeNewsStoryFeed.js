@@ -9,7 +9,7 @@ class HomeNewsStoryFeed extends React.Component {
   render() {
     return (
       <div className="feed">
-        <h3><b>Recent Stories</b></h3>
+        <h3 className="feed-title"><b>Recent Stories</b></h3>
         {_.map(this.props.articles, (article, i) => {
           return <HomeNewsStoryFeedCard 
           key={i} 

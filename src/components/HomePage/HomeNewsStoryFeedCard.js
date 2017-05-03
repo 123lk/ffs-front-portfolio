@@ -13,7 +13,7 @@ class HomeNewsStoryFeedCard extends React.Component {
           </div>
         <div className="media-content">
           <a className="article-title" href={this.props.articleUrl}>{this.props.title}</a>
-          <p className="title is-4">{this.props.organisation}</p>
+          <p className="org-title">{this.props.organisation}</p>
         </div>
         </div>
       </div>
