@@ -6,7 +6,10 @@ import DomainFeedCard from './DomainFeedCard';
 const DomainApprovedFeed = ({articles}) => (
       <div>
         {_.reduce(articles, (acc, article, i) => {
-          if (article.articleIsFakeNews) {
+          console.log(article)
+          if (article.articleIsFakeNews) 
+          {
+            
           acc.push(<DomainFeedCard key={i} title={article.title} domain={article.domain}/>);
         }
           return acc; 
