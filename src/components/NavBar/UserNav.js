@@ -25,6 +25,10 @@ class UserNav extends React.Component {
           </div>
         </div>
 
+        <div className = 'nav-center'>
+          <a className = 'nav-item' href='http://localhost:9090/'>Logo</a>
+        </div>
+
         <div id='menu' className={this.state.menuClass}>
 
           <a className='nav-item' href="http://localhost:9090/">Create account</a>

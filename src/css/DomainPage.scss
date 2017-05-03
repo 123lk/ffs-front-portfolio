@@ -1,29 +1,21 @@
 .domain-text-area {
-padding: auto;
-margin: auto;
+  text-align: center;
+  margin-top: 1em;
 }
 
 .domain-approved-feed {
+  margin-top: 1em;
   width: 60%;
   background-color: white;
-  border: solid darkslategray 1px;
-  border-radius: 0.5em;
   margin: auto;
 }
 
 .domain-pending-feed {
   width: 60%;
-  background-color: white;
-  border: solid darkslategray 1px;
-  border-radius: 0.5em;
   margin: auto;
   margin-top: 2em;
+  .card {
+    background-color: lightgrey;
+  }
 }
 
-
-.domain-feed-card {
-  width: 70%;
-  border: solid grey 0.2em;
-  border-radius: 0.5em;
-  margin-bottom: 2.5em;
-}

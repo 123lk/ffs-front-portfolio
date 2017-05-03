@@ -16,13 +16,13 @@ class DomainPage extends React.Component {
   render() {
     return (
       <div>
-        <div className="row domain-text-area">
+        <div className="domain-text-area">
           <DomainData {...this.props.domainData}/>
         </div>
-        <div className="row domain-approved-feed">
+        <div className="domain-approved-feed">
           <DomainApprovedFeed articles={this.props.articles}/>
         </div>
-        <div className="row domain-pending-feed">
+        <div className="domain-pending-feed">
           <DomainPendingFeed articles={this.props.articles}/>
         </div>
       </div>
