@@ -21,7 +21,6 @@ class ArticleCommentForm extends React.Component {
     event.preventDefault();
     axios.post(`${API_ROOT}/articles/1`, {
       comment: this.state.text,
-      userName: 'joecaine',
       userId: 1,
       threadId: this.props.threadId,
       articleId: this.props.articleId
