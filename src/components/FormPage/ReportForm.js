@@ -1,24 +1,24 @@
 import React from 'react';
+import '../../css/ReportForm.scss';
 
 class ReportForm extends React.Component {
   render() {
     return (
       <div>
-        <form>
-          <div className="form-group">
-            <label>URL of potential fake news article</label>
-            <input type="text" className="form-control" />
+        <div className='intro'>
+          <h3>Report an Article</h3>
+          <p>If you come across an article that you know to be false, this is the place to report it</p>
+          <div className="field">
+            <input type="text" className="input" placeholder='URL of article' />
           </div>
-          <div className="form-group">
-            <label>supporting information</label>
-            <textarea className="form-control" rows="8" />
+          <div className="field">
+            <textarea rows='20' className="textarea" placeholder='Reason for reporting' />
           </div>
-          <button type="submit" className="btn btn-default">Submit</button>
-        </form>
+          <button className="button is-primary">Submit</button>
+        </div>
       </div>
     );
   }
 }
-
 
 export default ReportForm;
