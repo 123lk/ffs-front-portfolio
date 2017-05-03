@@ -15,20 +15,22 @@ class SearchBar extends Component {
   }
   render() {
     return (
-      <InstantSearch
-        appId='BSCGDWJBKU'
-        apiKey='ecebdf5fdebcddc8c94f127d1eee4e4c'
-        indexName='FFS'
-      >
-        <SearchBox
-          className='search-box'
-          onChange={this.handleSearchBoxChange}
-          onReset={this.handleSearchBoxReset}
-        />
-        {this.state.areHitsVisible
-          ? <SearchResults />
-          : null}
-      </InstantSearch>
+      <div>
+        <InstantSearch
+          appId='BSCGDWJBKU'
+          apiKey='ecebdf5fdebcddc8c94f127d1eee4e4c'
+          indexName='FFS'
+        >
+          <SearchBox
+            className='search-box'
+            onChange={this.handleSearchBoxChange}
+            onReset={this.handleSearchBoxReset}
+          />
+          {this.state.areHitsVisible
+            ? <SearchResults />
+            : null}
+        </InstantSearch>
+        </div>
     );
   }
   handleSearchBoxReset() {
@@ -57,7 +59,7 @@ const Result = ({ hit }) => (
     <div className='result'>
       <span>
         <Highlight attributeName='title' hit={hit} />
-        <Highlight attributeName='domainDescription' hit={hit}/>
+        <Highlight attributeName='domainDescription' hit={hit} />
       </span>
     </div>
   </a>

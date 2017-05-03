@@ -5,24 +5,24 @@ import '../css/app.scss';
 import PropTypes from 'prop-types';
 
 class App extends React.Component {
-  render () {
+  render() {
     return (
       <div>
-         <div>
-            <UserNav />
+        <div>
+          <UserNav />
+        </div>
+        <div className="content">
+          <div>
+            {this.props.children}
           </div>
-          <div className="content">
-            <div>
-              {this.props.children} 
-            </div>
-          </div>
+        </div>
       </div>
     );
   }
 }
 
 App.propTypes = {
-    children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired
 };
 
 export default App;

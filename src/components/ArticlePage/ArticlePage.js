@@ -16,7 +16,6 @@ class ArticlePage extends React.Component {
   render() {
     return (
       <div>
-        {console.log(this.props.comments)}
         <div className="article-text-area">
           <ArticleTextArea {...this.props.articleData} />
         </div>

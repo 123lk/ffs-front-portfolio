@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../css/UserNav.scss';
+import SearchBar from '../AdditionalComponents/SearchBar';
 
 class UserNav extends React.Component {
   constructor(props) {
@@ -11,19 +12,21 @@ class UserNav extends React.Component {
   }
   render() {
     return (
-      <div id= 'navigation' className ='nav'>
+      <div id='navigation' className='nav'>
         <div className='nav-toggle' onClick={toggleMenu.bind(this)}>
           <span></span>
           <span></span>
           <span></span>
         </div>
 
-        <div className ='nav-left'>
-        <a className='nav-item' href="http://localhost:9090/">Home Page Logo</a>
+        <div className='nav-left'>
+          <div className="search-div">
+          <SearchBar />
+          </div>
         </div>
 
         <div id='menu' className={this.state.menuClass}>
-         
+
           <a className='nav-item' href="http://localhost:9090/">Create account</a>
           <a className='nav-item' href="http://localhost:9090/">Log in</a>
           <a className='nav-item' href="http://localhost:9090/reportform">Report fake news</a>

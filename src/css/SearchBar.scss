@@ -1,26 +1,28 @@
+.search-div {
+  padding-left: 3em;
+  margin-top: 0.1em;
+  width: 60%;
+}
+
 .SearchResults {
-  width: 50vw;
+  width: 26.5%;
+  position: absolute;
 }
 
 .SearchResults :hover {
-  background-color:white;
-  color: black;
+  background-color:lightgrey;
+  color: white;
 }
 
 .result {
-  color: white;
+  color: black;
   text-align: center;
-  background-color: black;
+  background-color: white;
   margin-top: 0;
-  .hit-name {
-    margin: auto;
-    width: 80%;
-    border: 1px solid green;
-  }
 }
 
 .ais-InstantSearch__root {
-  width: 75%;
+  width: 100%;
   margin: auto;
 }
 
