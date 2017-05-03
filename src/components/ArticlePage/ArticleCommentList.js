@@ -17,8 +17,6 @@ const ArticleCommentList = ({ comments }) => {
   return (
     <div>
       {renderComments(baseComments)}
-      <button type="button" className="btn btn-primary paginate btn-xs"><span className="glyphicon glyphicon-menu-left btn-xs" aria-hidden="true"></span>  Previous</button>
-      <button type="button" className="btn btn-primary paginate btn-xs"><span className="glyphicon glyphicon-menu-right btn-xs" aria-hidden="true"></span>  Next</button>
     </div>
   );
 

@@ -19,7 +19,7 @@ class ArticleCommentForm extends React.Component {
   handleSubmit(event) {
     if (this.state.text === '') return;
     event.preventDefault();
-    axios.post(`${API_ROOT}/articles/1`, {
+    axios.post(`${API_ROOT}/comments`, {
       comment: this.state.text,
       userId: 1,
       threadId: this.props.threadId,

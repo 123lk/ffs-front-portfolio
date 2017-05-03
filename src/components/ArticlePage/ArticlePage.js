@@ -22,6 +22,7 @@ class ArticlePage extends React.Component {
         <div className="article-comment-list">
           <ArticleCommentList comments={this.props.comments} />
         </div>
+        <h3 >Start a discussion...</h3>
         <ArticleCommentForm threadId={null} articleId={Number(this.props.params.id)}/>
       </div>
     );

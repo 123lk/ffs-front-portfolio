@@ -8,12 +8,22 @@
   overflow: hidden;
 }
 
+h3 {
+  text-align: center;
+}
+
 .showComment {
   margin: auto;
 }
 
 .author {
   font-weight: bold;
+}
+
+.card {
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .reply {
@@ -36,6 +46,7 @@
   background-color: white;
   border-color: lightgrey;
   font-weight: 500;
+  margin-bottom: 2em;
 }
 
 .button:hover {
@@ -43,6 +54,27 @@
   border-color: #EC0000;
   font-weight: 500;
 }
+
+.button:focus {
+  border-color: #EC0000; 
+}
+
+.showComment {
+  color: #EC0000;
+}
+
+.reply {
+  color: #EC0000;
+}
+
+.vote-count {
+  text-align: center;
+}
+
+.textarea:focus {
+  border-color: #EC0000;
+}
+
 
 
 
