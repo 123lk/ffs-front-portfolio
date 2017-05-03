@@ -1,3 +1,26 @@
-.textarea {
+.report-form {
   min-height: 400px;
+  border-color: #EC0000;
+}
+
+.report-form-div {
+  width: 70%;
+  margin: auto;
+}
+
+.intro {
+  text-align: center;
+  margin: 1em;
+}
+
+.button {
+  background-color: white;
+  border-color: lightgrey;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: white;
+  border-color: #EC0000;
+  font-weight: 500;
 }

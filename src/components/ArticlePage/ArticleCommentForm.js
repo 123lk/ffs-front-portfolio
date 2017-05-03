@@ -42,7 +42,7 @@ class ArticleCommentForm extends React.Component {
           <textarea className="textarea" placeholder="Contribute to discussion..." onChange={this.handleChange.bind(this)} ></textarea>
         </p>
         <p className="control">
-          <button onClick={this.handleSubmit} className="button is-primary">Submit</button>
+          <button onClick={this.handleSubmit} className="button">Submit</button>
         </p>
       </div>
     );
