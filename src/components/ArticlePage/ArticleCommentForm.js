@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as actions from '../../actions/index.js';
 
 const API_ROOT = 'https://cwr4mc2ure.execute-api.eu-west-2.amazonaws.com/dev';
 
@@ -27,6 +29,7 @@ class ArticleCommentForm extends React.Component {
     })
     .then((response) => {
       console.log(response);
+      this.props.fetchCurrentArticle(this.props.articleId);
     })
     .catch((error) => {
       console.log(error);
@@ -38,7 +41,7 @@ class ArticleCommentForm extends React.Component {
     return (
       <div className="field comment-box">
         <p className="control">
-          <textarea className="textarea" placeholder="Contribute to discussion..." onChange={this.handleChange.bind(this)} ></textarea>
+          <textarea className="textarea" value={this.state.text} placeholder="Contribute to discussion..." onChange={this.handleChange} ></textarea>
         </p>
         <p className="control">
           <button onClick={this.handleSubmit} className="button">Submit</button>
@@ -48,10 +51,19 @@ class ArticleCommentForm extends React.Component {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchCurrentArticle: (id) => {
+      dispatch(actions.fetchCurrentArticle(id));
+    }
+  };
+}
+
 ArticleCommentForm.propTypes = {
   articleId: PropTypes.number.isRequired,
-  threadId: PropTypes.number
+  threadId: PropTypes.number,
+  fetchCurrentArticle: PropTypes.func.isRequired
 };
 
 
-export default ArticleCommentForm;
+export default connect(null, mapDispatchToProps)(ArticleCommentForm);

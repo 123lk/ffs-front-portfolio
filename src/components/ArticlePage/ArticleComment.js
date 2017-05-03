@@ -55,7 +55,8 @@ ArticleComment.propTypes = {
   votes: PropTypes.number.isRequired,
   parentCommentId: PropTypes.number.isRequired,
   length: PropTypes.number.isRequired,
-  articleId: PropTypes.number.isRequired
+  articleId: PropTypes.number.isRequired,
+  renderComments: PropTypes.func.isRequired
 };
 
 
