@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../css/UserNav.scss';
 import SearchBar from '../AdditionalComponents/SearchBar';
+import BlackFlag from '../../icons/Flag-Black.png';
 
 class UserNav extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class UserNav extends React.Component {
         </div>
 
         <div className = 'nav-center'>
-          <a className = 'nav-item' href='http://localhost:9090/'>Logo</a>
+          <a className = 'nav-item' href='http://localhost:9090/'><img src = {BlackFlag}/></a>
         </div>
 
         <div id='menu' className={this.state.menuClass}>
