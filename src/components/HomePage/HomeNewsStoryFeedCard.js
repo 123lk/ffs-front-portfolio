@@ -13,7 +13,7 @@ class HomeNewsStoryFeedCard extends React.Component {
           </div>
         <div className="media-content">
           <h4 className="title-is-4"><b>{this.props.title}</b></h4>
-          <span>{this.props.domain}</span>
+          <a href={this.props.articleUrl}></a>
         </div>
         </div>
       </div>
@@ -23,7 +23,7 @@ class HomeNewsStoryFeedCard extends React.Component {
 
 HomeNewsStoryFeedCard.propTypes = {
   title: PropTypes.string,
-  domain: PropTypes.string
+  articleUrl: PropTypes.string
 };
 
 

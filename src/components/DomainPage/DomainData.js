@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DomainData = ({ domainName, domainDescription }) => (
+const DomainData = ({ organisationName, domainDescription }) => (
   <div>
-    <h3>{domainName}</h3>
+    <h3>{organisationName}</h3>
     <p>{domainDescription}</p>
   </div>
 );
 
 // TODO: refactor property names
 DomainData.propTypes = {
-  domainName: PropTypes.string,
+  organisationName: PropTypes.string,
   domainDescription: PropTypes.string
 };
 

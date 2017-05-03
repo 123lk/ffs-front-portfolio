@@ -11,7 +11,7 @@ class HomeNewsStoryFeed extends React.Component {
       <div className="feed">
         <h3><b>Recent Stories</b></h3>
         {_.map(this.props.articles, (article, i) => {
-          return <HomeNewsStoryFeedCard key={i} title={article.title} domain={article.domain} />;
+          return <HomeNewsStoryFeedCard key={i} title={article.title} articleUrl={article.articleUrl} />;
         }).slice(0, 10)}
       </div>
     );
@@ -27,7 +27,7 @@ function mapStateToProps(state) {
 HomeNewsStoryFeed.propTypes = {
   articles: PropTypes.shape({
     title: PropTypes.string,
-    domain: PropTypes.string
+    articleUrl: PropTypes.string
   })
 };
 

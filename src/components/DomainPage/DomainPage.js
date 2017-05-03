@@ -32,7 +32,7 @@ class DomainPage extends React.Component {
 
 DomainPage.propTypes = {
   domainData: PropTypes.shape({
-    domainName: PropTypes.string,
+    organisationName: PropTypes.string,
     domainDescription: PropTypes.string,
   }),
   articles: PropTypes.array.isRequired,
