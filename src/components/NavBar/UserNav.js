@@ -27,15 +27,15 @@ class UserNav extends React.Component {
         </div>
 
         <div className = 'nav-center'>
-          <a className = 'nav-item' href='http://localhost:9090/'><img src = {BlackFlag}/></a>
+          <a className = 'nav-item' href='http://https://forfactsake.herokuapp.com/'><img src = {BlackFlag}/></a>
         </div>
 
         <div id='menu' className={this.state.menuClass}>
 
-          <a className='nav-item' href="http://localhost:9090/">Create account</a>
-          <a className='nav-item' href="http://localhost:9090/">Log in</a>
-          <a className='nav-item' href="http://localhost:9090/reportform">Report fake news</a>
-          <a className='nav-item' href="http://localhost:9090/">FFS Chrome App</a>
+          <a className='nav-item' href="http://https://forfactsake.herokuapp.com/">Create account</a>
+          <a className='nav-item' href="http://https://forfactsake.herokuapp.com/">Log in</a>
+          <a className='nav-item' href="http://https://forfactsake.herokuapp.com/reportform">Report fake news</a>
+          <a className='nav-item' href="http://https://forfactsake.herokuapp.com/">FFS Chrome App</a>
         </div>
       </div>
     );
