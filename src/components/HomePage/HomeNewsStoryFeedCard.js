@@ -12,7 +12,7 @@ class HomeNewsStoryFeedCard extends React.Component {
             </div>
           </div>
         <div className="media-content">
-          <a className="article-title" href={`http://https://forfactsake.herokuapp.com/articles/${this.props._id}`}>{this.props.title}</a>
+          <a className="article-title" href={`https://forfactsake.herokuapp.com/articles/${this.props._id}`}>{this.props.title}</a>
           <p className="org-title">{this.props.organisation}</p>
         </div>
         </div>
@@ -22,7 +22,7 @@ class HomeNewsStoryFeedCard extends React.Component {
 }
 
 function redirect () {
-  location.href = `http://https://forfactsake.herokuapp.com/articles/${this.props._id}`;
+  location.href = `https://forfactsake.herokuapp.com/articles/${this.props._id}`;
 }
 
 HomeNewsStoryFeedCard.propTypes = {
