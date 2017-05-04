@@ -23,7 +23,7 @@ class DomainFeedCard extends React.Component {
 }
 
 function redirect () {
-  location.href = `http://localhost:9090/articles/${this.props._id}`;
+  location.href = `https://forfactsake.herokuapp.com/articles/${this.props._id}`;
 }
 
 DomainFeedCard.propTypes = {

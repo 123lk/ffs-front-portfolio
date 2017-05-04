@@ -5,7 +5,7 @@ const ArticleData = ({ title, articleUrl, description, organisation, domainId })
   <div>
     <p className="article-main-title">{title}</p>
     <p className="article-link">{articleUrl}</p>
-    <a className="org-title" href={`http://localhost:9090/domains/${domainId}`}>{organisation}</a>
+    <a className="org-title" href={`https://forfactsake.herokuapp.com/domains/${domainId}`}>{organisation}</a>
     <p className="article-description">{description}</p>
   </div>
 );
