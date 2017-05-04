@@ -18,8 +18,12 @@
 
 .intro {
   text-align: center;
-  margin: 1em;
+  margin-top: 2em;
   font-size: 1.3em;
+  h3 {
+    font-size: 4rem;
+    margin-bottom: 0.5em;
+  }
 }
 
 .button {
@@ -35,6 +39,7 @@
 }
 
 .input {
+    margin-top: 1em;
     border-color: #EC0000;
 }
 

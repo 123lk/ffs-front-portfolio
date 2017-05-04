@@ -1,6 +1,26 @@
 .domain-text-area {
   text-align: center;
-  margin-top: 1em;
+  margin-top: 2em;
+}
+
+.domain-description {
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-top: 0.5em;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.domain-link {
+  font-size: 1.2rem;
+}
+
+.domain-title {
+  font-size: 4rem;
+}
+
+.content p:not(:last-child) {
+  margin-bottom: 0;
 }
 
 .domain-approved-feed {
@@ -10,11 +30,13 @@
 
 .domain-pending-feed {
   padding: 2em;
-  margin-top: 2em;
+  margin-top: 1em;
   .card {
   margin-top: 1em;
   padding: 1em;
   background-color: #f1f1f1;
   }
 }
+
+
 

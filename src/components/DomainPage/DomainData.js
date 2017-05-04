@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 
 const DomainData = ({ registeredDomain, organisationName, domainDescription }) => (
   <div>
-    <a className="article-title" href={registeredDomain}>{organisationName}</a>
-    <h3>{organisationName}</h3>
-    <p>{domainDescription}</p>
+    <p className="domain-title">{organisationName}</p>
+    <p className="domain-link">{registeredDomain}</p>
+    <p className="domain-description">{domainDescription}</p>
   </div>
 );
 
-// TODO: refactor property names
 DomainData.propTypes = {
   organisationName: PropTypes.string,
   domainDescription: PropTypes.string,

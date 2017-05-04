@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ArticleData = ({ title, articleUrl, description, organisation }) => (
+const ArticleData = ({ title, articleUrl, description, organisation, domainId }) => (
   <div>
-    <a className="article-title" href={articleUrl}>{title}</a>
-    <p className="org-title">{organisation}</p>
+    <p className="article-main-title">{title}</p>
+    <p className="article-link">{articleUrl}</p>
+    <a className="org-title" href={`http://localhost:9090/domains/${domainId}`}>{organisation}</a>
     <p className="article-description">{description}</p>
   </div>
 );
 
+
 ArticleData.propTypes = {
+  domainId: PropTypes.number,
   title: PropTypes.string,
   articleUrl: PropTypes.string,
   description: PropTypes.string,

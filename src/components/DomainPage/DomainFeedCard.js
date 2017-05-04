@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class DomainFeedCard extends React.Component {
   render() {
     return (
-      <div className="card">
+      <div className="card" onClick={redirect.bind(this)}>
         <div className="media">
           <div className="media-left">
             <div className="card-image">
@@ -12,13 +12,18 @@ class DomainFeedCard extends React.Component {
             </div>
           </div>
           <div className="media-content">
-            <h4 className="title-is-4"><b>{this.props.title}</b></h4>
+          <p className="article-title">{this.props.title}</p>
+          <p className="org-title">{this.props.organisation}</p>
           </div>
         </div>
       </div>
 
     );
   }
+}
+
+function redirect () {
+  location.href = `http://localhost:9090/articles/${this.props._id}`;
 }
 
 DomainFeedCard.propTypes = {

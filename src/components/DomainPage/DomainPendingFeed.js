@@ -5,7 +5,7 @@ import DomainFeedCard from './DomainFeedCard';
 
 const DomainPendingFeed = ({articles}) => (
       <div>
-        <h3>Stories awaiting moderation: </h3>
+        <h3>Awaiting moderation: </h3>
         {_.reduce(articles, (acc, article, i) => {
           if (!article.articleIsFakeNews) {
           acc.push(<DomainFeedCard 
