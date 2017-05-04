@@ -10,7 +10,7 @@ const ArticleCommentList = ({ comments }) => {
 
   let renderComments = function (comments) {
     return _.reduce(comments, (acc, comment, i) => {
-      acc.push(<ArticleComment key={i} author={comment.author} comment={comment.comment} votes={comment.votes} parentCommentId={comment._id} length={comment.children.length} renderComments={renderComments} children={comment.children} articleId={comment.articleId}/>);
+      acc.push(<ArticleComment key={i} author={comment.author} comment={comment.comment} votes={comment.votes} commentId={comment._id} length={comment.children.length} renderComments={renderComments} children={comment.children} articleId={comment.articleId}/>);
       return acc;
     }, []);
   };

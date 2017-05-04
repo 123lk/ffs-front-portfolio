@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 
 import ArticleCommentList from './ArticleCommentList';
 import ArticleTextArea from './ArticleData';
-import ArticleCommentForm from './ArticleCommentForm'; 
+import ArticleCommentForm from './ArticleCommentForm';
 import * as actions from '../../actions/index.js';
-import {setIndentationFormat} from '../../helpers/index';
+import { setIndentationFormat } from '../../helpers/index';
 import '../../css/ArticlePage.scss';
 
 class ArticlePage extends React.Component {
@@ -23,7 +23,7 @@ class ArticlePage extends React.Component {
           <ArticleCommentList comments={this.props.comments} />
         </div>
         <h3 >Start a discussion...</h3>
-        <ArticleCommentForm threadId={null} articleId={Number(this.props.params.id)}/>
+        <ArticleCommentForm threadId={null} articleId={Number(this.props.params.id)} />
       </div>
     );
   }
@@ -48,7 +48,7 @@ ArticlePage.propTypes = {
   })
 };
 
-function mapStateToProps (state) {
+  function mapStateToProps(state) {
   return {
     articleData: state.currentArticle.articleData,
     comments: setIndentationFormat(state.currentArticle.commentsById)

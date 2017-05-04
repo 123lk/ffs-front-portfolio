@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ArticleCommentForm from './ArticleCommentForm';
+import VoteButton from './VoteButton';
 
 class ArticleComment extends React.Component {
+  
   constructor() {
     super();
     this.state = {
@@ -28,9 +30,7 @@ class ArticleComment extends React.Component {
           <div className="media">
             <div className="media-left">
               <div className="vote">
-                <i className="fa fa-arrow-up"></i>
-                <div className="vote-count">{this.props.votes}</div>
-                <i className="fa fa-arrow-down"></i>
+                <VoteButton id={this.props.commentId} votes={this.props.votes}/>
               </div>
               </div>
               <div className="media-content">
@@ -40,7 +40,7 @@ class ArticleComment extends React.Component {
           </div>
           <a onClick={this.onClickShowComments.bind(this)}  type="button"><span className= "showComment">{this.showComments(this.props.length)}</span></a>
           <a onClick={this.onClickReply.bind(this)} type="button"><span className="reply">Reply</span></a>
-          {this.state.showReply && <ArticleCommentForm articleId={this.props.articleId} threadId={this.props.parentCommentId} />}
+          {this.state.showReply && <ArticleCommentForm articleId={this.props.articleId} threadId={this.props.commentId} />}
           <div className="" />
         </div>
         {this.state.showComments && <div className="child-component">{this.props.renderComments(this.props.children)}</div>}
@@ -53,7 +53,7 @@ ArticleComment.propTypes = {
   author: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,
   votes: PropTypes.number.isRequired,
-  parentCommentId: PropTypes.number.isRequired,
+  commentId: PropTypes.number.isRequired,
   length: PropTypes.number.isRequired,
   articleId: PropTypes.number.isRequired,
   renderComments: PropTypes.func.isRequired

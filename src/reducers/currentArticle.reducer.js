@@ -10,6 +10,21 @@ export const initialState = {
 
 export default function (prevState = initialState, action) {
   switch (action.type) {
+    case types.VOTE_COMMENT_REQUEST:
+      return prevState;
+    case types.VOTE_COMMENT_SUCCESS:
+    console.log(prevState.commentsById[action.id]);
+      return Object.assign({}, prevState, {
+        commentsById: Object.assign({}, prevState.commentsById, {
+          [action.id]: Object.assign({}, prevState.commentsById[action.id], {
+            votes: action.data
+          })
+        })
+      });
+    case types.VOTE_COMMENT_ERROR:
+      return Object.assign({}, prevState, {
+        error: action.error
+      });
     case types.FETCH_CURRENT_ARTICLE_REQUEST:
       return Object.assign({}, prevState, {
         loading: true,
@@ -30,6 +45,8 @@ export default function (prevState = initialState, action) {
       return prevState;
   }
 }
+
+
 
 // TODO: test
 export function getCommentsByVotes(commentsById) {

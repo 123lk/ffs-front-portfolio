@@ -14,6 +14,7 @@ class DomainPage extends React.Component {
     this.props.fetchDomain(this.props.params.id);
   }
   render() {
+    
     return (
       <div>
         <div className="domain-text-area">

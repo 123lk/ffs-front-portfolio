@@ -7,11 +7,16 @@ const API_ROOT = 'https://cwr4mc2ure.execute-api.eu-west-2.amazonaws.com/dev';
 class ReportForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { url: '', title: '', text: '', welcomeMessage: 'Report an Article', paragraph: 'If you come across an article that you know to be false, this is the place to report it'};
+    this.state = { url: this.setQuery(), title: '', text: '', welcomeMessage: 'Report an Article', paragraph: 'If you come across an article that you know to be false, this is the place to report it'};
     this.handleChangeUrl = this.handleChangeUrl.bind(this);
     this.handleChangeTitle = this.handleChangeTitle.bind(this);
     this.handleChangeText = this.handleChangeText.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  setQuery() {
+    if (this.props.location.query.url) return this.props.location.query.url;
+    else return '';
   }
   
   handleChangeUrl(event) {
@@ -24,6 +29,7 @@ class ReportForm extends React.Component {
 
   handleChangeText(event) {
     this.setState({ text: event.target.value });
+    console.log(this.props.location.query);
   }
 
   handleSubmit(event) {
