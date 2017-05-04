@@ -5,10 +5,17 @@ import DomainFeedCard from './DomainFeedCard';
 
 const DomainApprovedFeed = ({articles}) => (
       <div>
-        <h3>approved feed</h3>
         {_.reduce(articles, (acc, article, i) => {
-          if (article.articleIsFakeNews) {
-          acc.push(<DomainFeedCard key={i} title={article.title} domain={article.domain}/>);
+          console.log(article)
+          if (article.articleIsFakeNews) 
+          {
+            
+          acc.push(<DomainFeedCard 
+          key={i} 
+          title={article.title} 
+          organisation={article.organisation}
+          articleUrl={article.articleUrl}
+          />);
         }
           return acc; 
         },[]).slice(0, 5)}
@@ -17,7 +24,12 @@ const DomainApprovedFeed = ({articles}) => (
 );
 
 DomainApprovedFeed.propTypes = {
-  articles: PropTypes.array.isRequired
+  articles: PropTypes.shape({
+    _id: PropTypes.number,
+    title: PropTypes.string,
+    articleUrl: PropTypes.string,
+    organisation: PropTypes.string  
+  })
 };
 
 

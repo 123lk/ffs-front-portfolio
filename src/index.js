@@ -9,7 +9,7 @@ import { createLogger } from 'redux-logger';
 import reducer from './reducers';
 
 import HomePage from './components/HomePage/HomePage';
-import FormPage from './components/FormPage/FormPage';
+import FormPage from './components/FormPage/ReportForm';
 import ArticlePage from './components/ArticlePage/ArticlePage';
 import DomainPage from './components/DomainPage/DomainPage';
 
@@ -21,7 +21,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
-        <Route path="/reportform" component={FormPage} />
+        <Route path="/reportform" component={FormPage}/>
         <Route path="/domains/:id" component={DomainPage} />
         <Route path="/articles/:id" component={ArticlePage} />
       </Route>

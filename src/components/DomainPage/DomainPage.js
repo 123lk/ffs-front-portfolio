@@ -14,15 +14,16 @@ class DomainPage extends React.Component {
     this.props.fetchDomain(this.props.params.id);
   }
   render() {
+    
     return (
       <div>
-        <div className="row domain-text-area">
+        <div className="domain-text-area">
           <DomainData {...this.props.domainData}/>
         </div>
-        <div className="row domain-approved-feed">
+        <div className="domain-approved-feed">
           <DomainApprovedFeed articles={this.props.articles}/>
         </div>
-        <div className="row domain-pending-feed">
+        <div className="domain-pending-feed">
           <DomainPendingFeed articles={this.props.articles}/>
         </div>
       </div>
@@ -32,8 +33,9 @@ class DomainPage extends React.Component {
 
 DomainPage.propTypes = {
   domainData: PropTypes.shape({
-    domainName: PropTypes.string,
+    organisationName: PropTypes.string,
     domainDescription: PropTypes.string,
+    registeredDomain: PropTypes.string
   }),
   articles: PropTypes.array.isRequired,
   fetchDomain: PropTypes.func.isRequired,

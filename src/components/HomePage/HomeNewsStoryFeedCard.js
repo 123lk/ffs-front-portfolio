@@ -4,22 +4,32 @@ import PropTypes from 'prop-types';
 class HomeNewsStoryFeedCard extends React.Component {
   render() {
     return (
-      <div className="container-fluid home-news-story-feed-card">
-        <div className="picture-div col-md-2">
-          <img src="http://blog.lostcollective.com/wp-content/uploads/2016/08/the-guardian-logo.png" />
+      <div className="card" onClick={redirect.bind(this)} >
+        <div className="media">
+          <div className="media-left">
+            <div className="card-image">
+              <img src="http://blog.lostcollective.com/wp-content/uploads/2016/08/the-guardian-logo.png" />
+            </div>
+          </div>
+        <div className="media-content">
+          <a className="article-title" href={`http://localhost:9090/articles/${this.props._id}`}>{this.props.title}</a>
+          <p className="org-title">{this.props.organisation}</p>
         </div>
-        <div className="col-md-9">
-          <h4><b>{this.props.title}</b></h4>
-          <span>{this.props.domain}</span>
         </div>
       </div>
     );
   }
 }
 
+function redirect () {
+  location.href = `http://localhost:9090/articles/${this.props._id}`;
+}
+
 HomeNewsStoryFeedCard.propTypes = {
+  _id: PropTypes.number,
   title: PropTypes.string,
-  domain: PropTypes.string
+  articleUrl: PropTypes.string,
+  organisation: PropTypes.string
 };
 
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ArticleCommentForm from './ArticleCommentForm';
+import VoteButton from './VoteButton';
 
 class ArticleComment extends React.Component {
+  
   constructor() {
     super();
     this.state = {
@@ -23,20 +25,24 @@ class ArticleComment extends React.Component {
   }
   render() {
     return (
-      <div className="comment-card">
-        <div className="container vote">
-          <div className="glyphicon glyphicon-arrow-up" aria-hidden="true"></div>
-          <div className="vote-count">{this.props.votes}</div>
-          <div className="glyphicon glyphicon-arrow-down" aria-hidden="true"></div>
+      <div>
+        <div className="card">
+          <div className="media">
+            <div className="media-left">
+              <div className="vote">
+                <VoteButton id={this.props.commentId} votes={this.props.votes}/>
+              </div>
+              </div>
+              <div className="media-content">
+                <span className="author">{this.props.author}</span>
+                <div> {this.props.comment}</div>
+            </div>
+          </div>
+          <a onClick={this.onClickShowComments.bind(this)} type="button"><span className= "showComment">{this.showComments(this.props.length)}</span></a>
+          <a onClick={this.onClickReply.bind(this)} type="button"><span className="reply">Reply</span></a>
+          {this.state.showReply && <ArticleCommentForm articleId={this.props.articleId} threadId={this.props.commentId} />}
+          <div className="" />
         </div>
-        <div className="rhs">
-          <span className="comment-author"> {this.props.author}</span>
-          <div> {this.props.comment}</div>
-          <a onClick={this.onClickReply.bind(this)} type="button"><span>Reply</span></a>
-          <div className="divider" />
-          <a onClick={this.onClickShowComments.bind(this)} type="button"><span>{this.showComments(this.props.length)}</span></a>
-        </div>
-        {this.state.showReply && <ArticleCommentForm parentCommentId={this.props.parentCommentId} />}
         {this.state.showComments && <div className="child-component">{this.props.renderComments(this.props.children)}</div>}
       </div>
     );
@@ -47,8 +53,10 @@ ArticleComment.propTypes = {
   author: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,
   votes: PropTypes.number.isRequired,
-  parentCommentId: PropTypes.number.isRequired,
-  length: PropTypes.number.isRequired
+  commentId: PropTypes.number.isRequired,
+  length: PropTypes.number.isRequired,
+  articleId: PropTypes.number.isRequired,
+  renderComments: PropTypes.func.isRequired
 };
 
 

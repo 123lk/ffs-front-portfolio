@@ -1,0 +1,46 @@
+@import 'fonts.scss';
+
+
+.search-div {
+  padding-left: 3em;
+  margin-top: 0.1em;
+  width: 60%;
+}
+
+.SearchResults {
+  width: 27.5%;
+  position: absolute;
+}
+
+.SearchResults :hover {
+  background-color:#f1f1f1;;
+  color: black;
+}
+
+.result {
+  color: black;
+  font-family: 'Decalotype-Black';
+  text-align: center;
+  background-color: white;
+  margin-top: 0;
+}
+
+.ais-InstantSearch__root {
+  width: 100%;
+  margin: auto;
+}
+
+.ais-SearchBox_wrapper {
+  width: 100%;
+}
+
+.ais-SearchBox__input {
+  width: 100%;
+  margin: auto;
+  font-family: 'Decalotype-Black';
+}
+
+.ais-SearchBox__root {
+  width: 100%;
+  max-width: 1000px;
+}

@@ -10,22 +10,26 @@ const ArticleCommentList = ({ comments }) => {
 
   let renderComments = function (comments) {
     return _.reduce(comments, (acc, comment, i) => {
-      acc.push(<ArticleComment key={i} author={comment.author} comment={comment.comment} votes={comment.votes} parentCommentId={comment._id} length={comment.children.length} renderComments={renderComments} children={comment.children} />);
+      acc.push(<ArticleComment key={i} author={comment.author} comment={comment.comment} votes={comment.votes} commentId={comment._id} length={comment.children.length} renderComments={renderComments} children={comment.children} articleId={comment.articleId}/>);
       return acc;
     }, []);
   };
   return (
     <div>
       {renderComments(baseComments)}
-      <button type="button" className="btn btn-primary paginate btn-xs"><span className="glyphicon glyphicon-menu-left btn-xs" aria-hidden="true"></span>  Previous</button>
-      <button type="button" className="btn btn-primary paginate btn-xs"><span className="glyphicon glyphicon-menu-right btn-xs" aria-hidden="true"></span>  Next</button>
     </div>
   );
 
 };
 
 ArticleCommentList.propTypes = {
-  comments: PropTypes.array.isRequired
+  comments: PropTypes.shape({
+    author: PropTypes.string,
+    children: PropTypes.array,
+    comment: PropTypes.string,
+    votes: PropTypes.number,
+    articleId: PropTypes.number
+  }),
 };
 
 export default ArticleCommentList;

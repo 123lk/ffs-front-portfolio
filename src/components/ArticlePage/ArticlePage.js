@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 
 import ArticleCommentList from './ArticleCommentList';
 import ArticleTextArea from './ArticleData';
-import ArticleCommentForm from './ArticleCommentForm'; 
+import ArticleCommentForm from './ArticleCommentForm';
 import * as actions from '../../actions/index.js';
-import {setIndentationFormat} from '../../helpers/index';
+import { setIndentationFormat } from '../../helpers/index';
 import '../../css/ArticlePage.scss';
 
 class ArticlePage extends React.Component {
@@ -16,14 +16,14 @@ class ArticlePage extends React.Component {
   render() {
     return (
       <div>
-        {console.log(this.props.comments)}
-        <div className="row article-text-area">
+        <div className="article-text-area">
           <ArticleTextArea {...this.props.articleData} />
         </div>
-        <div className="row article-comment-list">
+        <div className="article-comment-list">
           <ArticleCommentList comments={this.props.comments} />
         </div>
-        <ArticleCommentForm />
+        <h3 >Start a discussion...</h3>
+        <ArticleCommentForm threadId={null} articleId={Number(this.props.params.id)} />
       </div>
     );
   }
@@ -32,17 +32,23 @@ class ArticlePage extends React.Component {
 ArticlePage.propTypes = {
   articleData: PropTypes.shape({
     title: PropTypes.string,
-    domain: PropTypes.string,
-    description: PropTypes.string
+    aritcleUrl: PropTypes.string,
+    description: PropTypes.string,
+    organisation: PropTypes.string
   }),
-  comments: PropTypes.array.isRequired,
+  comments: PropTypes.shape({
+    author: PropTypes.string,
+    children: PropTypes.array,
+    comment: PropTypes.string,
+    votes: PropTypes.number
+  }),
   fetchCurrentArticle: PropTypes.func.isRequired,
   params: PropTypes.shape({
     id: PropTypes.string.isRequired
   })
 };
 
-function mapStateToProps (state) {
+  function mapStateToProps(state) {
   return {
     articleData: state.currentArticle.articleData,
     comments: setIndentationFormat(state.currentArticle.commentsById)

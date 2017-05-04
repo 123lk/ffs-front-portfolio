@@ -1,34 +1,62 @@
 import React from 'react';
-import AgAutocomplete from 'react-algoliasearch';
 import '../../css/UserNav.scss';
+import SearchBar from '../AdditionalComponents/SearchBar';
+import BlackFlag from '../../icons/Flag-Black.png';
 
 class UserNav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      navIsActive: false,
+      menuClass: 'nav-right nav-menu'
+    };
+  }
   render() {
     return (
-      <div className="user-nav">
-        <a href="http://localhost:9090/"> <img src="http://1k6kcz5e21e3yunpze4q1cxn.wpengine.netdna-cdn.com/files/2015/02/ffs.jpg" alt="logo" /></a>
-        <div className="algolia-search">
-          <AgAutocomplete
-            apiKey={'ecebdf5fdebcddc8c94f127d1eee4e4c'}
-            appId={'BSCGDWJBKU'}
-            displayKey='name'
-            indices={[{ index: 'FFS' }]}
-            inputId='input-search'
-            placeholder='Search...'
-          />
+      <div id='navigation' className='nav'>
+        <div className='nav-toggle' onClick={toggleMenu.bind(this)}>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div className="user-nav-box">
-          <ul>
-            <li><a href="http://localhost:9090/">Home</a></li>
-            <li><a href="http://localhost:9090/">Log in</a></li>
-            <li><a href="http://localhost:9090/">Create account</a></li>
-            <li><a href="http://localhost:9090/reportform">Report fake news</a></li>
-            <li><a href="http://localhost:9090/">Google chrome app</a></li>
-          </ul>
+
+        <div className='nav-left'>
+          <div className="search-div">
+          <SearchBar />
+          </div>
         </div>
-      </div >
+
+        <div className = 'nav-center'>
+          <a className = 'nav-item' href='http://localhost:9090/'><img src = {BlackFlag}/></a>
+        </div>
+
+        <div id='menu' className={this.state.menuClass}>
+
+          <a className='nav-item' href="http://localhost:9090/">Create account</a>
+          <a className='nav-item' href="http://localhost:9090/">Log in</a>
+          <a className='nav-item' href="http://localhost:9090/reportform">Report fake news</a>
+          <a className='nav-item' href="http://localhost:9090/">FFS Chrome App</a>
+        </div>
+      </div>
     );
   }
+}
+
+function toggleMenu() {
+  if (this.state.navIsActive) {
+    this.setState({
+      navIsActive: !this.state.navIsActive,
+      menuClass: 'nav-right nav-menu'
+    });
+  }
+  else {
+    this.setState({
+      navIsActive: !this.state.navIsActive,
+      menuClass: 'nav-right nav-menu is-active'
+    });
+  }
+
+
 }
 
 export default UserNav;

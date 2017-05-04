@@ -13,10 +13,10 @@ class HomePage extends React.Component {
   render () {
     return (
       <div>
-        <div className="row home-text-area">
+        <div className="home-text-area">
           <HomeTextArea/>
         </div>
-        <div className="row home-news-story-feed">
+        <div className="home-news-story-feed">
           <HomeNewsStoryFeed/>
         </div>
       </div>

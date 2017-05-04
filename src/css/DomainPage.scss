@@ -1,34 +1,20 @@
 .domain-text-area {
-  padding: 3em;
-  margin: 6em;
-  margin-top: 2em;
-  background-color: white;
-  border: solid darkslategray 1px;
-  border-radius: 0.5em;
-  margin-bottom: 1.5em;
+  text-align: center;
+  margin-top: 1em;
 }
 
 .domain-approved-feed {
-  width: 60%;
-  background-color: white;
-  border: solid darkslategray 1px;
-  border-radius: 0.5em;
-  margin: auto;
+  margin-top: 1em;
+  padding: 2em;
 }
 
 .domain-pending-feed {
-  width: 60%;
-  background-color: white;
-  border: solid darkslategray 1px;
-  border-radius: 0.5em;
-  margin: auto;
+  padding: 2em;
   margin-top: 2em;
+  .card {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #f1f1f1;
+  }
 }
 
-
-.domain-feed-card {
-  width: 70%;
-  border: solid grey 0.2em;
-  border-radius: 0.5em;
-  margin-bottom: 2.5em;
-}

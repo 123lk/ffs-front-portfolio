@@ -210,7 +210,7 @@ describe('setIndentationFormat', function () {
   });
 });
 
-describe.only('filterBaseCommentsAndSortByVote', function () {
+describe('filterBaseCommentsAndSortByVote', function () {
   it('is a function', function () {
     expect(filterBaseCommentsAndSortByVote).to.be.a('function');
   });

@@ -1,0 +1,47 @@
+.report-form {
+  min-height: 400px;
+  border-color: #EC0000;
+}
+
+.report-form:focus {
+  border-color: #EC0000;  
+}
+
+.report-form:hover {
+  border-color: #EC0000;  
+}
+
+.report-form-div {
+  width: 70%;
+  margin: auto;
+}
+
+.intro {
+  text-align: center;
+  margin: 1em;
+  font-size: 1.3em;
+}
+
+.button {
+  background-color: white;
+  border-color: lightgrey;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: white;
+  border-color: #EC0000;
+  font-weight: 500;
+}
+
+.input {
+    border-color: #EC0000;
+}
+
+.input:focus {
+    border-color: #EC0000;
+}
+
+.input:hover {
+    border-color: #EC0000;
+}

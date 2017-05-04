@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ArticleData = ({title, domain, description}) => (
+const ArticleData = ({ title, articleUrl, description, organisation }) => (
   <div>
-    <h1>{title}</h1>
-    <h3>{domain}</h3>
-    <p>{description}</p>
+    <a className="article-title" href={articleUrl}>{title}</a>
+    <p className="org-title">{organisation}</p>
+    <p className="article-description">{description}</p>
   </div>
 );
 
 ArticleData.propTypes = {
   title: PropTypes.string,
-  domain: PropTypes.string,
-  description: PropTypes.string
+  articleUrl: PropTypes.string,
+  description: PropTypes.string,
+  organisation: PropTypes.string
 };
 
 export default ArticleData;

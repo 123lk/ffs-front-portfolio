@@ -1,7 +1,7 @@
-import * as axios from '../api';
+import axios from 'axios';
 import * as types from './types';
 
-const API_ROOT = ''; // TODO: fill in when back end is done
+const API_ROOT = 'https://cwr4mc2ure.execute-api.eu-west-2.amazonaws.com/dev';
 
 export function fetchHome() {
   return function (dispatch) {
@@ -10,8 +10,7 @@ export function fetchHome() {
       .then(function (response) {
         dispatch({
           type: types.FETCH_HOME_SUCCESS,
-          articles: response.data,
-          trends: response.trends
+          articles: response.data
         });
       })
       .catch(function (error) {
@@ -63,42 +62,24 @@ export function fetchCurrentArticle(id) {
   };
 }
 
-// TODO: refactor fetchProperTrends -> fetchTrends
-export function fetchTrends() {
-  return function (dispatch) {
-    dispatch({ type: types.FETCH_TRENDS_REQUEST });
-    return axios.get(`${API_ROOT}/reportform`)
-      .then(function (response) {
-        dispatch({
-          type: types.FETCH_TRENDS_SUCCESS,
-          trends: response.trends
-        });
-      })
-      .catch(function (error) {
-        dispatch({
-          type: types.FETCH_TRENDS_ERROR,
-          error
-        });
-      });
-  };
-}
-
-export function fetchProperTrends() {
+export function voteComment(commentId, vote) {
   return function (dispatch) {
     dispatch({
-      type: types.FETCH_PROPER_TRENDS_REQUEST
+      type: types.VOTE_COMMENT_REQUEST
     });
-    return axios.get(`${API_ROOT}/trends`)
+    return axios
+      .put(`${API_ROOT}/comments/?id=${commentId}&vote=${vote}`)
       .then(response => {
         dispatch({
-          type: types.FETCH_PROPER_TRENDS_SUCCESS,
-          data: response.data
+          type: types.VOTE_COMMENT_SUCCESS,
+          data: response.data.numVotes,
+          id: commentId
         });
       })
       .catch(error => {
         dispatch({
-          type: types.FETCH_PROPER_TRENDS_ERROR,
-          error
+          type: types.VOTE_COMMENT_ERROR,
+          error: error
         });
       });
   };
