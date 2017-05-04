@@ -8,13 +8,15 @@ class VoteButton extends Component {
   render() {
     return (
       <div>
-        <a onClick={this.clickHandler.bind(this, this.props.id, 'up')} className='button'>
+        <a onClick={this.clickHandler.bind(this, this.props.id, 'up')} className='vote'>
           <span className="icon">
             <i className="fa fa-arrow-up"></i>
           </span>
         </a>
+        <div className ='vote-count'>
         {this.props.votes}
-        <a className='button' onClick={this.clickHandler.bind(this, this.props.id, 'down')}>
+        </div>
+        <a className='vote' onClick={this.clickHandler.bind(this, this.props.id, 'down')}>
           <span className="icon">
             <i className="fa fa-arrow-down"></i>
           </span>

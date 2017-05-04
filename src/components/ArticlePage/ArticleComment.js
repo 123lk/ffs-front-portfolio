@@ -38,7 +38,7 @@ class ArticleComment extends React.Component {
                 <div> {this.props.comment}</div>
             </div>
           </div>
-          <a onClick={this.onClickShowComments.bind(this)}  type="button"><span className= "showComment">{this.showComments(this.props.length)}</span></a>
+          <a onClick={this.onClickShowComments.bind(this)} type="button"><span className= "showComment">{this.showComments(this.props.length)}</span></a>
           <a onClick={this.onClickReply.bind(this)} type="button"><span className="reply">Reply</span></a>
           {this.state.showReply && <ArticleCommentForm articleId={this.props.articleId} threadId={this.props.commentId} />}
           <div className="" />
