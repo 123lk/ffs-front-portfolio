@@ -5,17 +5,16 @@
 
 .domain-approved-feed {
   margin-top: 1em;
-  width: 60%;
-  background-color: white;
-  margin: auto;
+  padding: 2em;
 }
 
 .domain-pending-feed {
-  width: 60%;
-  margin: auto;
+  padding: 2em;
   margin-top: 2em;
   .card {
-    background-color: lightgrey;
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #f1f1f1;
   }
 }
 

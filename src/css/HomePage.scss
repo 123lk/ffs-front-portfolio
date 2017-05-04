@@ -20,8 +20,9 @@
   background-color: #f1f1f1;
 }
 
-.article-title:hover {
-  color: #EC0000;
+.card:hover {
+  border: 1px solid#EC0000;
+  cursor: pointer;
 }
 
 .article-title {

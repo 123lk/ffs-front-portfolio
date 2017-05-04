@@ -16,6 +16,7 @@ class HomeNewsStoryFeed extends React.Component {
           title={article.title} 
           articleUrl={article.articleUrl}
           organisation={article.organisation}  
+          _id={article._id}
           />;
         }).slice(0, 10)}
       </div>
@@ -31,6 +32,7 @@ function mapStateToProps(state) {
 
 HomeNewsStoryFeed.propTypes = {
   articles: PropTypes.shape({
+    _id: PropTypes.number,
     title: PropTypes.string,
     articleUrl: PropTypes.string,
     organisation: PropTypes.string

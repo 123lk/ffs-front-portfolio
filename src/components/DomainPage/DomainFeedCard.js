@@ -22,7 +22,10 @@ class DomainFeedCard extends React.Component {
 }
 
 DomainFeedCard.propTypes = {
-  title: PropTypes.string.isRequired
+  _id: PropTypes.number,
+  title: PropTypes.string,
+  articleUrl: PropTypes.string,
+  organisation: PropTypes.string
 };
 
 
