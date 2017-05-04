@@ -16,7 +16,7 @@ import DomainPage from './components/DomainPage/DomainPage';
 const logger = createLogger(); 
 const store = createStore(reducer, applyMiddleware(thunk, logger)); 
 
-const ROOT_PATH = '/forfactsake';
+const ROOT_PATH = 'https://forfactsake.herokuapp.com';
 
 ReactDOM.render(
   <Provider store={store}>
