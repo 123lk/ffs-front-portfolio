@@ -16,12 +16,12 @@ import DomainPage from './components/DomainPage/DomainPage';
 const logger = createLogger(); 
 const store = createStore(reducer, applyMiddleware(thunk, logger)); 
 
-const ROOT_PATH = 'forfactsake';
+
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path={`${ROOT_PATH}/`} component={App}>
+      <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
         <Route path="/reportform" component={FormPage}/>
         <Route path="/domains/:id" component={DomainPage} />
