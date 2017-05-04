@@ -21,7 +21,7 @@ const ROOT_PATH = 'https://forfactsake.herokuapp.com';
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="{`${ROOT_PATH}/`}" component={App}>
+      <Route path={`${ROOT_PATH}/`} component={App}>
         <IndexRoute component={HomePage} />
         <Route path="/reportform" component={FormPage}/>
         <Route path="/domains/:id" component={DomainPage} />
