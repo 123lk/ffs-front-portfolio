@@ -3,5 +3,5 @@ node_modules
 *.log
 **/*.log
 .vscode
-**/bundle.js
-**/bundle.js.map
+public/js/bundle.js
+public/js/bundle.js.map
