@@ -59,7 +59,7 @@ const Result = ({ hit }) => (
     <div className='result'>
       <span>
         <Highlight attributeName='title' hit={hit} />
-        <Highlight attributeName='domainDescription' hit={hit} />
+        <Highlight attributeName='organisationName' hit={hit} />
       </span>
     </div>
   </a>

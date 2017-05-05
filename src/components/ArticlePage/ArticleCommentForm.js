@@ -30,6 +30,8 @@ class ArticleCommentForm extends React.Component {
     .then((response) => {
       console.log(response);
       this.props.fetchCurrentArticle(this.props.articleId);
+      this.props.onClickReply();
+      this.props.onClickShowComments();
     })
     .catch((error) => {
       console.log(error);
@@ -62,7 +64,9 @@ function mapDispatchToProps(dispatch) {
 ArticleCommentForm.propTypes = {
   articleId: PropTypes.number.isRequired,
   threadId: PropTypes.number,
-  fetchCurrentArticle: PropTypes.func.isRequired
+  fetchCurrentArticle: PropTypes.func.isRequired,
+  onClickReply: PropTypes.func.isRequired,
+  onClickShowComments: PropTypes.func.isRequired
 };
 
 

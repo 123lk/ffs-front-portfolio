@@ -17,6 +17,7 @@ const DomainApprovedFeed = ({articles}) => (
           organisation={article.organisation}
           articleUrl={article.articleUrl}
           _id={article._id}
+          logoUrl={article.logoUrl}
           />);
         }
           return acc; 
@@ -30,7 +31,8 @@ DomainApprovedFeed.propTypes = {
     _id: PropTypes.number,
     title: PropTypes.string,
     articleUrl: PropTypes.string,
-    organisation: PropTypes.string  
+    organisation: PropTypes.string,
+    logoUrl: PropTypes.string  
   })
 };
 

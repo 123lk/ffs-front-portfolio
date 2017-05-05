@@ -17,8 +17,9 @@ class HomeNewsStoryFeed extends React.Component {
           articleUrl={article.articleUrl}
           organisation={article.organisation}  
           _id={article._id}
+          logoUrl={article.logoUrl}
           />;
-        }).slice(0, 10)}
+        })}
       </div>
     );
   }
@@ -35,7 +36,8 @@ HomeNewsStoryFeed.propTypes = {
     _id: PropTypes.number,
     title: PropTypes.string,
     articleUrl: PropTypes.string,
-    organisation: PropTypes.string
+    organisation: PropTypes.string,
+    logoUrl: PropTypes.string
   })
 };
 

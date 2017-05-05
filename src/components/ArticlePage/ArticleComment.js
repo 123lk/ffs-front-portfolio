@@ -13,11 +13,11 @@ class ArticleComment extends React.Component {
     };
   }
   onClickReply(event) {
-    event.preventDefault();
+    if (event) event.preventDefault();
     this.setState({ showReply: !this.state.showReply });
   }
   onClickShowComments(event) {
-    event.preventDefault();
+    if (event) event.preventDefault();
     this.setState({ showComments: !this.state.showComments });
   }
   showComments(length) {
@@ -40,7 +40,7 @@ class ArticleComment extends React.Component {
           </div>
           <a onClick={this.onClickShowComments.bind(this)} type="button"><span className= "showComment">{this.showComments(this.props.length)}</span></a>
           <a onClick={this.onClickReply.bind(this)} type="button"><span className="reply">Reply</span></a>
-          {this.state.showReply && <ArticleCommentForm articleId={this.props.articleId} threadId={this.props.commentId} />}
+          {this.state.showReply && <ArticleCommentForm onClickReply={this.onClickReply.bind(this)} articleId={this.props.articleId} onClickShowComments={this.onClickShowComments.bind(this)}threadId={this.props.commentId} />}
           <div className="" />
         </div>
         {this.state.showComments && <div className="child-component">{this.props.renderComments(this.props.children)}</div>}
@@ -55,8 +55,8 @@ ArticleComment.propTypes = {
   votes: PropTypes.number.isRequired,
   commentId: PropTypes.number.isRequired,
   length: PropTypes.number.isRequired,
-  articleId: PropTypes.number.isRequired,
-  renderComments: PropTypes.func.isRequired
+  articleId: PropTypes.number,
+  renderComments: PropTypes.func
 };
 
 

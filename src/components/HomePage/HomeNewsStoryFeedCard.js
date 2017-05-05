@@ -8,7 +8,7 @@ class HomeNewsStoryFeedCard extends React.Component {
         <div className="media">
           <div className="media-left">
             <div className="card-image">
-              <img src="http://blog.lostcollective.com/wp-content/uploads/2016/08/the-guardian-logo.png" />
+              <img src={this.props.logoUrl} />
             </div>
           </div>
         <div className="media-content">
@@ -29,7 +29,8 @@ HomeNewsStoryFeedCard.propTypes = {
   _id: PropTypes.number,
   title: PropTypes.string,
   articleUrl: PropTypes.string,
-  organisation: PropTypes.string
+  organisation: PropTypes.string,
+  logoUrl: PropTypes.string
 };
 
 
