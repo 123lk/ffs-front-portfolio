@@ -7,10 +7,7 @@ const DomainApprovedFeed = ({articles}) => (
       <div>
         <h3>Approved by moderators: </h3>
         {_.reduce(articles, (acc, article, i) => {
-          console.log(article)
-          if (article.articleIsFakeNews) 
-          {
-            
+          if (article.articleIsFakeNews) {
           acc.push(<DomainFeedCard 
           key={i} 
           title={article.title} 
@@ -35,7 +32,5 @@ DomainApprovedFeed.propTypes = {
     logoUrl: PropTypes.string  
   })
 };
-
-
 
 export default DomainApprovedFeed;

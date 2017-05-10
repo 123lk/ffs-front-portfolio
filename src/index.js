@@ -16,8 +16,6 @@ import DomainPage from './components/DomainPage/DomainPage';
 const logger = createLogger(); 
 const store = createStore(reducer, applyMiddleware(thunk, logger)); 
 
-
-
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
@@ -32,4 +30,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-  // TODO: /domain/:domain_id && /article/:article_id

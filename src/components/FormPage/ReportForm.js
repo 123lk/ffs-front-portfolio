@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import '../../css/ReportForm.scss';
 
 const API_ROOT = 'https://cwr4mc2ure.execute-api.eu-west-2.amazonaws.com/dev';
@@ -29,7 +30,6 @@ class ReportForm extends React.Component {
 
   handleChangeText(event) {
     this.setState({ text: event.target.value });
-    console.log(this.props.location.query);
   }
 
   handleSubmit(event) {
@@ -73,5 +73,9 @@ class ReportForm extends React.Component {
     );
   }
 }
+
+ReportForm.propTypes = {
+  location: PropTypes.object.isRequired
+};
 
 export default ReportForm;

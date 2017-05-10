@@ -31,20 +31,6 @@ export function populateChildrenArray(commentsById) {
   return commentsById;
 }
 
-// export function setCommentLevel(commentsById) {
-//   for (let key in commentsById) {
-//     commentsById[key].level = findCommentLevel(commentsById[key], commentsById);
-//   }
-//   return commentsById;
-// }
-
-// export function findCommentLevel(comment, commentsById) {
-//   if (comment.threadId === null) return 0;
-//   else {
-//     return 1 + findCommentLevel(commentsById[comment.threadId], commentsById);
-//   }
-// }
-
 export function sortChildCommentsByVote(commentsById) {
   for (let key in commentsById) {
     getCommentsByVotes(commentsById[key].children = _.map(commentsById[key].children, (commentId) => {
@@ -63,7 +49,3 @@ export function filterBaseCommentsAndSortByVote(comments) {
     return comment.threadId === null;
   }));
 }
-
-
-
-

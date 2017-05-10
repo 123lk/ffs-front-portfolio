@@ -46,8 +46,6 @@ export default function (prevState = initialState, action) {
   }
 }
 
-
-
 // TODO: test
 export function getCommentsByVotes(commentsById) {
   return Object.values(commentsById)

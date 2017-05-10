@@ -30,7 +30,7 @@ class SearchBar extends Component {
             ? <SearchResults />
             : null}
         </InstantSearch>
-        </div>
+      </div>
     );
   }
   handleSearchBoxReset() {

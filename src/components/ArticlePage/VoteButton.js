@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/index.js';
+import PropTypes from 'prop-types';
 
 
 class VoteButton extends Component {
@@ -42,5 +43,10 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
+VoteButton.propTypes = {
+  id: PropTypes.number.isRequired,
+  votes: PropTypes.number.isRequired,
+  sendVote: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(VoteButton);

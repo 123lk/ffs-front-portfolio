@@ -51,6 +51,7 @@ class ArticleComment extends React.Component {
 
 ArticleComment.propTypes = {
   author: PropTypes.string.isRequired,
+  children: PropTypes.object,
   comment: PropTypes.string.isRequired,
   votes: PropTypes.number.isRequired,
   commentId: PropTypes.number.isRequired,
