@@ -1,6 +1,6 @@
 # For Fact's Sake - Front End
 
-- For Fact's Sake is a community-driven news fact checker website that works with a Google Chrome extension to highlight untrustworthy news sites in the DOM. This was implemented using AWS for the backend, with a React-Redux frontend, and a downloadable Google Chrome extension. Our front end can be viewed at www.forfactsake.herokuapp.com
+- For Fact's Sake is a community-driven news fact checker website that works with a Google Chrome extension to highlight untrustworthy news sites in the DOM. This was implemented using AWS for the backend, with a React-Redux frontend, and a downloadable Google Chrome extension. Our front end can be viewed at https://forfactsake.herokuapp.com/
 - The role of the front end is to act as the community hub through which news articles are discussed. Following this discussion, a moderator may determine whether or not the story is considered to be 'fake news' or not.
 - Articles that are considered 'fake' will count against that news site, changing the colour of the flag being rendered by the Chrome extension in the DOM of websites such as Twitter, Facebook, and Google. Further statistics can be viewed through a React Tooltip also rendered into the DOM.
 - Given that our front end is concerned with registering 'fake news' articles against particular domains, our Redux reducers are primarily divided between Articles and Domains.
