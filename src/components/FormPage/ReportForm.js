@@ -3,7 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import '../../css/ReportForm.scss';
 
-const API_ROOT = 'https://cwr4mc2ure.execute-api.eu-west-2.amazonaws.com/dev';
+const API_ROOT = 'https://tik1xt1cj4.execute-api.eu-west-2.amazonaws.com/dev';
 
 class ReportForm extends React.Component {
   constructor(props) {
