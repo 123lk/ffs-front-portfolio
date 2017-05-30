@@ -15,7 +15,7 @@
 - Now run 'npm install' at the root of this repository to install the required dependencies.
 - Once they are installed, you can launch the app using 'npm run dev'
 - Once compiled, you can access FFS Front through http://localhost:9090/
-- Alternatively, you can skip this process and view our hosted site at www.forfactsake.herokuapp.com 
+- Alternatively, you can skip this process and view our hosted site at https://forfactsake.herokuapp.com/ 
 
 # Testing
 
