@@ -31,7 +31,7 @@
 - Bulma - responsiveness framework
 - Axios - used for API calls
 - Algolia used for search capability
-- HTML/SCSS
+- HTML/CSS
 - Bundled using Webpack
 - Tested using Mocha/Chai
 
